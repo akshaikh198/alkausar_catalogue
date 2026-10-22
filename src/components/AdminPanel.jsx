@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import { apiUrl } from '../api';
 
 const styles = {
   section: {
@@ -96,7 +97,7 @@ function AdminPanel() {
   const [isOnline, setIsOnline] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch(apiUrl('/api/products'))
       .then((res) => {
         if(res.ok) {
           setDbStatus('🍃 Database Vault Connected & Synced Live');
