@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal'; // 💥 FIXED: Imported missing Modal framework element
+import { apiUrl } from '../api';
 
 // Premium UI Styles Object Layer Configuration
 const styles = {
