@@ -171,7 +171,7 @@ function ProductCatalogue() {
   const [hoveredCardId, setHoveredCardId] = useState(null);
 
   useEffect(() => {
-    ffetch(apiUrl('/api/products'))
+    fetch(apiUrl('/api/products'))
       .then((res) => {
         if (!res.ok) throw new Error("Network response mismatch");
         return res.json();

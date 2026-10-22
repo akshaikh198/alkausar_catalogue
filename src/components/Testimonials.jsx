@@ -101,21 +101,13 @@ const internalReviews = [
   }
 ];
 
+
+
 function Testimonials() {
   const [reviews, setReviews] = useState(internalReviews);
 
   // Optional Hook: Fetches testimonials from backend if you decide to add a collection later
-  useEffect(() => {
-    fetch(apiUrl('/api/home-sections'))
-      .then(res => res.json())
-      .then(data => {
-        if (data.testimonials && data.testimonials.items) {
-          setReviews(data.testimonials.items);
-        }
-      })
-      .catch(() => console.log("Rendering core legacy luxury feedback matrix directly."));
-  }, []);
-
+  
   return (
     <div style={styles.section}>
       <Container>
