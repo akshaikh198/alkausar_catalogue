@@ -191,7 +191,7 @@ function ProductGallery() {
   const itemsPerPage = 6; // Shows exactly 6 luxury items per card screen row chunk
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch(apiUrl('/api/products'))
       .then((res) => {
         if (!res.ok) throw new Error("Database pipeline network exception drop");
         return res.json();

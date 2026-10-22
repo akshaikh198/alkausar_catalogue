@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
+import { apiUrl } from '../api';
 
 const styles = {
   section: {
@@ -170,7 +171,7 @@ function ProductCatalogue() {
   const [hoveredCardId, setHoveredCardId] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    ffetch(apiUrl('/api/products'))
       .then((res) => {
         if (!res.ok) throw new Error("Network response mismatch");
         return res.json();

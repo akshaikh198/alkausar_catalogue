@@ -106,7 +106,7 @@ function Testimonials() {
 
   // Optional Hook: Fetches testimonials from backend if you decide to add a collection later
   useEffect(() => {
-    fetch('http://localhost:5000/api/home-sections')
+    fetch(apiUrl('/api/home-sections'))
       .then(res => res.json())
       .then(data => {
         if (data.testimonials && data.testimonials.items) {

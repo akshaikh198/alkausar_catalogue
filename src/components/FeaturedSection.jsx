@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 // Dummy or real placeholder paths for collection thumbnails
 import attarImg from '../assets/Images/Mix/attar.jpg'; 
@@ -79,6 +80,7 @@ const styles = {
   }
 };
 
+
 // Reusable card wrapper component to handle individual mouse-hover zoom interactions
 function HoverCard({ image, title, subtitle, link }) {
   const [hovered, setHovered] = useState(false);
@@ -113,6 +115,9 @@ function HoverCard({ image, title, subtitle, link }) {
 }
 
 function FeaturedSection() {
+
+  const navigate = useNavigate();
+  
   return (
     <section style={styles.section}>
       <Container>
@@ -141,7 +146,7 @@ function FeaturedSection() {
         {/* 2. FEATURED COLLECTIONS GRID */}
         <h2 style={styles.sectionHeading}>Shop By Category</h2>
         <Row className="g-4">
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4} onClick={() => navigate(`/collection/attars`)}>
             <HoverCard 
               image={attarImg} 
               title="Attars" 
@@ -149,7 +154,7 @@ function FeaturedSection() {
               link="#attars"
             />
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4} onClick={() => navigate(`/collection/perfumes`)}>
             <HoverCard 
               image={perfumeImg} 
               title="Perfumes" 
@@ -157,7 +162,7 @@ function FeaturedSection() {
               link="#perfumes"
             />
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4} onClick={() => navigate(`/collection/bakhoor`)}>
             <HoverCard 
               image={bakhoorImg} 
               title="Bakhoor" 

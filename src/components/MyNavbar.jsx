@@ -229,11 +229,11 @@ function MyNavbar({ onSearchChange, searchQuery, children }) {
                   <DropdownHoverItem to="/collection/attars" activePath={location.pathname}>
                     👑 Attars Concentrate
                   </DropdownHoverItem>
-                  <DropdownHoverItem to="/" activePath={location.pathname}>
+                  <DropdownHoverItem to="/collection/perfumes" activePath={location.pathname}>
                     ✨ Perfume Sprays
                   </DropdownHoverItem>
                   <div style={{ height: '1px', background: 'rgba(212, 175, 55, 0.1)', margin: '0.5rem 0.6rem' }} />
-                  <DropdownHoverItem to="/" activePath={location.pathname}>
+                  <DropdownHoverItem to="/collection/bakhoor" activePath={location.pathname}>
                     🪵 Sweet Bakhoor
                   </DropdownHoverItem>
                 </div>

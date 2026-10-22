@@ -104,7 +104,7 @@ function CategoryView() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/api/products')
+    fetch(apiUrl('/api/products'))
       .then(res => {
         if (!res.ok) throw new Error(`HTTP Error Status: ${res.status}`);
         return res.json();
