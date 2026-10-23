@@ -24,6 +24,8 @@ import SearchDropdown from 'components/SearchDropdown';
 import ConciergeWidget from 'components/ConciergeWidget';
 import Testimonials from 'components/Testimonials';
 import Footer from 'components/Footer';
+import ProductGallery from 'components/ProductGallery';
+
 
 // Replace with your real production domain.
 const SITE_URL = 'https://alkausardemo.netlify.app';
@@ -211,6 +213,8 @@ function MainAppContent() {
         <Route path="/" element={<HomeLayout />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<ProductGallery />} />
+
         <Route
           path="/collection/:category"
           element={<CategoryView />}

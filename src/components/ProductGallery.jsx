@@ -5,8 +5,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
+import { apiUrl } from '../api';
 
 const styles = {
+  
   section: {
     padding: '8rem 0 6rem 0',
     background: 'radial-gradient(circle at top, #FCFBF9 0%, #F3F1EC 100%)', // Elegant Luxury Light Mode Linen
@@ -23,7 +25,7 @@ const styles = {
     fontSize: '3.5rem',
     fontWeight: '900',
     color: '#0F172A',
-    fontFamily: "'Cinzel', 'Playfair Display', serif",
+    fontfamily: "'Rubik Spray Paint', 'system-ui'",
     letterSpacing: '2px',
     textAlign: 'center',
   },
@@ -240,7 +242,7 @@ function ProductGallery() {
   return (
     <div style={styles.section}>
       <Container>
-        <h1 style={styles.heading}>The Scent Vault</h1>
+        <h1 style={styles.heading}>The Product Gallery</h1>
         <p style={styles.subtitle}>Browse through our complete compiled artisanal archive of rare fragrances and premium formulations</p>
         <div style={styles.goldLine} />
 
