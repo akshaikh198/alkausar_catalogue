@@ -1,280 +1,518 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+
+import React, { useEffect, useMemo, useState } from 'react';
+import Pagination from 'react-bootstrap/Pagination';
+import {
+  useParams,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal'; // 💥 FIXED: Imported missing Modal framework element
-import { apiUrl } from '../api';
+import Modal from 'react-bootstrap/Modal';
+import { STATIC_PRODUCTS } from '../data/products';
+import alKausarLogo from '../assets/Images/Logo/Al_Kausar_Logo.png';
+import GalleryPageHero from './GalleryPageHero';
+import GalleryHeaderImage from '../assets/Images/Banner/Background.png';
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaWhatsapp,
+  FaYoutube
+} from 'react-icons/fa';
 
-// Premium UI Styles Object Layer Configuration
 const styles = {
   section: {
-    padding: '6rem 0',
-    background: 'radial-gradient(circle at top, #F8FAFC 0%, #E2E8F0 100%)',
+    padding: '1rem 0',
+    background: 'radial-gradient(circle at top, #FCFBF9 0%, #F3F1EC 100%)',
     minHeight: '100vh',
   },
-  sectionHeading: {
-    fontSize: '2.8rem',
-    fontWeight: '900',
-    color: '#0F172A',
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
-    fontFamily: "'Playfair Display', serif",
-    marginBottom: '0.25rem',
-  },
-  sectionSubtitle: {
-    color: '#64748B',
-    marginBottom: '4rem',
-    fontSize: '1rem',
-    textTransform: 'capitalize'
-  },
-  productCard: {
-    background: 'rgba(255, 255, 255, 0.45)',
-    backdropFilter: 'blur(20px) saturate(140%)',
-    border: '1px solid rgba(255, 255, 255, 0.6)',
-    borderRadius: '24px',
-    overflow: 'hidden',
-    cursor: 'pointer',
-    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-  },
-  imageWrapper: {
-    height: '340px',
-    overflow: 'hidden',
-    backgroundColor: '#cbd5e1',
-  },
-  productImage: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-  },
-  cardBody: {
-    padding: '1.5rem',
-    textAlign: 'center',
-    background: 'rgba(255, 255, 255, 0.25)',
-  },
-  productTitle: {
-    fontSize: '1.25rem',
-    fontWeight: '800',
-    color: '#0F172A',
-    marginBottom: '1rem',
-  },
-  discoverBtn: {
-    width: '100%',
-    border: '1px solid rgba(15, 23, 42, 0.08)',
-    borderRadius: '12px',
-    padding: '0.6rem',
-    fontSize: '0.85rem',
-    fontWeight: '700',
-    transition: 'all 0.3s ease',
-  },
-  modalContent: {
-    background: 'rgba(255, 255, 255, 0.75)',
-    backdropFilter: 'blur(30px) saturate(160%)',
-    border: '1px solid rgba(255, 255, 255, 0.8)',
-    borderRadius: '32px',
-  },
-  modalImage: {
-    width: '100%',
-    height: '360px',
-    objectFit: 'cover',
-    borderRadius: '20px',
-    boxShadow: '0 20px 40px rgba(0,0,0,0.06)'
-  },
-  noteBadge: {
-    display: 'inline-block',
-    margin: '0.2rem 0.4rem 0.2rem 0',
-    padding: '0.4rem 0.8rem',
-    fontSize: '0.78rem',
-    fontWeight: '700',
-    borderRadius: '10px',
-    color: '#475569',
-    backgroundColor: 'rgba(15, 23, 42, 0.04)',
-    border: '1px solid rgba(15, 23, 42, 0.02)'
-  }
+}
+
+const PRODUCTS_PER_PAGE = 6;
+
+const getProductId = (product) => String(product._id || product.id || '');
+
+const getProductImage = (product, preferDesigner = false) => {
+  const image = preferDesigner
+    ? product.designerBgImageUrl ||
+      product.whiteBgImageUrl ||
+      product.imageUrl ||
+      product.image
+    : product.whiteBgImageUrl ||
+      product.imageUrl ||
+      product.image ||
+      product.designerBgImageUrl;
+
+  if (!image || typeof image !== 'string') return '';
+
+  return image.startsWith('http') || image.startsWith('/')
+    ? image
+    : `/${image}`;
 };
+
+function ProductImage({ src, alt, className, style }) {
+  const [imageSrc, setImageSrc] = useState(src || alKausarLogo);
+
+  useEffect(() => {
+    setImageSrc(src || alKausarLogo);
+  }, [src]);
+
+  return (
+    <img
+      src={imageSrc}
+      alt={alt || 'Al Kausar Perfume'}
+      className={className}
+      style={style}
+      loading="lazy"
+      onError={() => {
+        if (imageSrc !== alKausarLogo) {
+          setImageSrc(alKausarLogo);
+        }
+      }}
+    />
+  );
+}
 
 function CategoryView() {
   const { category } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [hoveredCardId, setHoveredCardId] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [activeProduct, setActiveProduct] = useState(null);
-  const [hoveredCardId, setHoveredCardId] = useState(null);
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(apiUrl('/api/products'))
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP Error Status: ${res.status}`);
-        return res.json();
-      })
-      .then(data => {
-        if (Array.isArray(data)) {
-          // Filters items matching the active URL route parameter parameter variable cleanly
-          const categoryItems = data.filter(item => item.type === category);
-          setProducts(categoryItems);
-        } else {
-          console.error("Backend sent an invalid data structure:", data);
-          setProducts([]);
-        }
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed loading backend content streams:", err);
-        setProducts([]);
-        setLoading(false);
-      });
-  }, [category]); // Triggers view rebuild cycles safely when routing paths change
+  const items = useMemo(() => {
+    const normalizedCategory = (category || '').trim().toLowerCase();
 
-  // Helper utility function handling dynamic database image paths and clean text-data uri streams
-  const getProductImage = (product) => {
-    if (product && product.imageUrl) {
-      return product.imageUrl;
-    }
-    // High-end default elegant studio stock fallback illustration path link
-    return "https://unsplash.com";
-  };
+    return (STATIC_PRODUCTS || []).filter((product) => {
+      return (
+        product.type &&
+        product.type.trim().toLowerCase() === normalizedCategory
+      );
+    });
+  }, [category]);
 
-  if (loading) return (
-    <div style={{ minHeight: '100vh', background: '#F8FAFC' }} className="d-flex align-items-center justify-content-center">
-      <div className="text-center py-5 text-muted small fw-bold tracking-widest">REFRACTING SCENTS FROM VAULT...</div>
-    </div>
+  const totalPages = Math.ceil(items.length / PRODUCTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const paginatedItems = items.slice(
+    startIndex,
+    startIndex + PRODUCTS_PER_PAGE
   );
 
+  useEffect(() => {
+    setCurrentPage(1);
+    setHoveredCardId(null);
+  }, [category]);
+
+  // Open a product automatically when navigated to from search.
+  useEffect(() => {
+    const targetId = location.state?.targetProductId;
+
+    if (!targetId || items.length === 0) return;
+
+    const productIndex = items.findIndex(
+      (product) => getProductId(product) === String(targetId)
+    );
+
+    if (productIndex === -1) return;
+
+    const foundProduct = items[productIndex];
+    const targetPage = Math.floor(productIndex / PRODUCTS_PER_PAGE) + 1;
+
+    setCurrentPage(targetPage);
+    setActiveProduct(foundProduct);
+    setShowModal(true);
+
+    // Clear the navigation state so the modal does not reopen on refresh.
+    navigate(location.pathname, {
+      replace: true,
+      state: null,
+    });
+  }, [location.state, location.pathname, navigate, items]);
+
+  const changePage = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const openProduct = (product) => {
+    setActiveProduct(product);
+    setShowModal(true);
+  };
+
+  const closeProduct = () => {
+    setShowModal(false);
+  };
+
+  const renderNoteGroup = (label, notes, icon) => {
+    if (!Array.isArray(notes) || notes.length === 0) return null;
+
+    return (
+      <div className="ak-category-note-group">
+        <h6>
+          <span>{icon}</span> {label}
+        </h6>
+        <div className="ak-category-note-list">
+          {notes.map((note, index) => (
+            <span className="ak-category-note" key={`${label}-${index}`}>
+              {note}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  const modalImage = activeProduct
+    ? getProductImage(activeProduct, true)
+    : '';
+
   return (
-    <div style={styles.section}>
-      <Container>
-        <h1 style={styles.sectionHeading}>{category} Collection</h1>
-        <p style={styles.sectionSubtitle}>Handcrafted premium house variants curated perfectly within our {category} category</p>
-        
-        {products.length === 0 ? (
-          <div className="text-center py-5 text-muted italic bg-white bg-opacity-25 rounded-3 border p-5">
-            No formulations have been published to the {category} collection catalog repository yet.
+    <main className="ak-category-page">
+      {/* Catalogue Hero */}
+      <section className="gallery-hero">
+      
+        {/* BACKGROUND IMAGE */}
+        <img
+          src={GalleryHeaderImage}
+          alt="AL-KAUSAR Fragrance Collection"
+          className="gallery-hero-image"
+        />
+      
+        {/* DARK OVERLAY */}
+        <div className="gallery-hero-overlay"></div>
+      
+        {/* HERO CONTENT */}
+        <div className="gallery-hero-content">
+      
+          {/* LEFT SIDE - HEADING */}
+          <div className="gallery-heading-wrapper">
+      
+            <div className="gallery-heading-banner">
+      
+              <div className="gallery-heading-tag">
+                AL-KAUSAR
+              </div>
+      
+              <h1 className="gallery-heading-text">
+                {category || 'Our'} <span>Collection</span>
+              </h1>
+      
+            </div>
+      
+            <p className="gallery-heading-subtitle">
+              DISCOVER YOUR SIGNATURE FRAGRANCE
+            </p>
+      
           </div>
-        ) : (
-          <Row className="g-4">
-            {products.map((product) => {
-              const isHovered = hoveredCardId === product._id;
-              return (
-                <Col key={product._id} xs={12} sm={6} md={4}> 
-                  <Card
-                    style={{
-                      ...styles.productCard,
-                      transform: isHovered ? 'translateY(-12px) scale(1.01)' : 'translateY(0) scale(1)',
-                      boxShadow: isHovered ? '0 20px 40px rgba(15, 23, 42, 0.08)' : '0 10px 30px rgba(15, 23, 42, 0.01)',
-                      borderColor: isHovered ? 'rgba(15,23,42,0.1)' : 'rgba(255,255,255,0.6)'
-                    }}
-                    onMouseEnter={() => setHoveredCardId(product._id)}
-                    onMouseLeave={() => setHoveredCardId(null)}
-                    onClick={() => { setActiveProduct(product); setShowModal(true); }} // ⚡️ ACTIVATES MODAL CONTEXT TRIGGER ON CLICK
-                  >
-                    <div style={styles.imageWrapper}>
-                      <img
-                        src={getProductImage(product)}
-                        alt={product.title}
-                        style={{
-                          ...styles.productImage,
-                          transform: isHovered ? 'scale(1.04)' : 'scale(1)',
+      
+          {/* RIGHT SIDE - SOCIAL GLASS CARD */}
+          <div className="gallery-social-glass">
+      
+            <span className="gallery-social-eyebrow">
+              STAY CONNECTED
+            </span>
+      
+            <h5 className="gallery-social-title">
+              CONNECT WITH US
+            </h5>
+      
+            <p className="gallery-social-description">
+              Follow our fragrance journey and stay connected
+              with AL-KAUSAR.
+            </p>
+      
+            <div className="gallery-social-icons">
+      
+              <a
+                href="https://www.instagram.com/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+      
+              <a
+                href="https://www.facebook.com/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebookF />
+              </a>
+      
+              <a
+                href="https://wa.me/91YOURNUMBER"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp />
+              </a>
+      
+              <a
+                href="https://www.youtube.com/@YOUR_CHANNEL"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <FaYoutube />
+              </a>
+      
+            </div>
+      
+            <div className="gallery-social-footer">
+              <span></span>
+              EXPERIENCE THE ART OF PERFUMERY
+              <span></span>
+            </div>
+      
+          </div>
+      
+        </div>
+      
+      </section>
+
+      {/* Product Catalogue */}
+      <section className="ak-category-catalogue">
+        <Container>
+          <div className="ak-category-section-heading">
+            <div>
+              <span className="ak-category-eyebrow">DISCOVER THE COLLECTION</span>
+              <h2>Fragrance <span>Catalogue</span></h2>
+            </div>
+
+            <div className="ak-category-total">
+              <span>{items.length}</span>
+              <small>PRODUCTS</small>
+            </div>
+          </div>
+
+          {items.length === 0 ? (
+            <div className="ak-category-empty">
+              <span className="ak-category-empty-mark">AK</span>
+              <h3>Nothing to discover just yet.</h3>
+              <p>
+                There are currently no products listed in the{' '}
+                <strong>{category}</strong> collection.
+              </p>
+            </div>
+          ) : (
+            <>
+              <Row className="g-4">
+                {paginatedItems.map((product, index) => {
+                  const productId = getProductId(product);
+                  const isHovered = hoveredCardId === productId;
+                  const listingImage = getProductImage(product);
+
+                  return (
+                    <Col
+                      key={productId || `${product.title}-${index}`}
+                      xs={12}
+                      sm={6}
+                      lg={4}
+                    >
+                      <article
+                        className={`ak-product-card ${
+                          isHovered ? 'is-hovered' : ''
+                        }`}
+                        onMouseEnter={() => setHoveredCardId(productId)}
+                        onMouseLeave={() => setHoveredCardId(null)}
+                        onClick={() => openProduct(product)}
+                        onKeyDown={(event) => {
+                          if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault();
+                            openProduct(product);
+                          }
                         }}
-                      />
-                    </div>
-                    <Card.Body style={styles.cardBody}>
-                      <h4 style={styles.productTitle}>{product.title}</h4>
-                      <button 
-                        style={{
-                          ...styles.discoverBtn,
-                          backgroundColor: isHovered ? '#0F172A' : 'rgba(255, 255, 255, 0.6)',
-                          color: isHovered ? '#ffffff' : '#0F172A',
-                        }}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`View ${product.title || 'fragrance'} details`}
                       >
-                        Discover Notes
-                      </button>
-                    </Card.Body>
-                  </Card>
+                        <div className="ak-product-image-wrap">
+  <ProductImage
+    src={listingImage}
+    alt={product.title || 'Al Kausar fragrance'}
+    className="ak-product-image"
+  />
+
+  <span className="ak-product-image-label">
+    AL KAUSAR
+  </span>
+
+  <div className="ak-product-overlay">
+    <span>DISCOVER FRAGRANCE</span>
+    <span className="ak-product-overlay-arrow">↗</span>
+  </div>
+</div>
+
+                        <div className="ak-product-card-body">
+                          <span className="ak-product-category">
+                            {product.type || 'COLLECTION'}
+                          </span>
+
+                          <h3>{product.title || 'Untitled Fragrance'}</h3>
+
+                          <p>
+                            {product.description
+                              ? product.description.length > 105
+                                ? `${product.description.slice(0, 105)}...`
+                                : product.description
+                              : 'Discover the character of this distinctive fragrance.'}
+                          </p>
+
+                          <div className="ak-product-card-footer">
+                            <span>EXPLORE DETAILS</span>
+                            <span aria-hidden="true">↗</span>
+                          </div>
+                        </div>
+                      </article>
+                    </Col>
+                  );
+                })}
+              </Row>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="ak-category-pagination">
+                  <div className="ak-category-pagination-divider" />
+
+                  <Pagination className="ak-luxury-pagination">
+                    <Pagination.Prev
+                      disabled={currentPage === 1}
+                      onClick={() => changePage(Math.max(currentPage - 1, 1))}
+                      aria-label="Previous page"
+                    />
+
+                    {Array.from({ length: totalPages }, (_, index) => {
+                      const page = index + 1;
+
+                      return (
+                        <Pagination.Item
+                          key={page}
+                          active={currentPage === page}
+                          onClick={() => changePage(page)}
+                        >
+                          {String(page).padStart(2, '0')}
+                        </Pagination.Item>
+                      );
+                    })}
+
+                    <Pagination.Next
+                      disabled={currentPage === totalPages}
+                      onClick={() =>
+                        changePage(Math.min(currentPage + 1, totalPages))
+                      }
+                      aria-label="Next page"
+                    />
+                  </Pagination>
+
+                  <div className="ak-category-pagination-info">
+                    <span>
+                      SHOWING{' '}
+                      <strong>{startIndex + 1}</strong>
+                      {' – '}
+                      <strong>
+                        {Math.min(
+                          startIndex + PRODUCTS_PER_PAGE,
+                          items.length
+                        )}
+                      </strong>
+                    </span>
+
+                    <span className="ak-category-info-separator">•</span>
+
+                    <span>
+                      TOTAL <strong>{items.length} PRODUCTS</strong>
+                    </span>
+
+                    <span className="ak-category-info-separator">•</span>
+
+                    <span>
+                      PAGE{' '}
+                      <strong>
+                        {currentPage} / {totalPages}
+                      </strong>
+                    </span>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </Container>
+      </section>
+
+      {/* Product Details Modal */}
+      <Modal
+        show={showModal}
+        onHide={closeProduct}
+        size="lg"
+        centered
+        contentClassName="ak-product-modal"
+        dialogClassName="ak-product-modal-dialog"
+        aria-labelledby="ak-product-modal-title"
+      >
+        {activeProduct && (
+          <>
+            <Modal.Header closeButton className="ak-product-modal-header">
+              <span className="ak-category-eyebrow">
+                THE HOUSE OF AL KAUSAR
+              </span>
+            </Modal.Header>
+
+            <Modal.Body>
+              <Row className="align-items-center g-4">
+                <Col xs={12} md={5}>
+                <div className="ak-product-modal-image-wrap">
+  <ProductImage
+    src={modalImage}
+    alt={activeProduct.title || 'Al Kausar fragrance'}
+    className="ak-product-modal-image"
+  />
+</div>
                 </Col>
-              );
-            })}
-          </Row>
+
+                <Col xs={12} md={7}>
+                  <div className="ak-product-modal-content">
+                    <span className="ak-product-category">
+                      {activeProduct.type || 'COLLECTION'}
+                    </span>
+
+                    <h2 id="ak-product-modal-title">
+                      {activeProduct.title}
+                    </h2>
+
+                    <div className="ak-product-modal-line" />
+
+                    <p className="ak-product-modal-description">
+                      {activeProduct.description ||
+                        'Discover the character of this distinctive fragrance from Al Kausar.'}
+                    </p>
+
+                    <div className="ak-product-notes">
+                      {renderNoteGroup('TOP NOTES', activeProduct.topNotes, '✦')}
+                      {renderNoteGroup('HEART NOTES', activeProduct.heartNotes, '♡')}
+                      {renderNoteGroup('BASE NOTES', activeProduct.baseNotes, '◆')}
+                    </div>
+
+                    <div className="ak-product-performance">
+                      <span>LONGEVITY</span>
+                      <strong>
+                        {activeProduct.longevity || 'Not specified'}
+                      </strong>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Modal.Body>
+          </>
         )}
-      </Container>
-
-      {/* REUSABLE PROVENANCE DETAILED DIALOG MODAL POPUP LAYER */}
-      {activeProduct && (
-        <Modal 
-          show={showModal} 
-          onHide={() => setShowModal(false)} 
-          size="lg" 
-          centered 
-          contentClassName="custom-royal-glass-modal"
-        >
-          <Modal.Header closeButton className="border-0 pb-0" style={{ zIndex: 10 }} />
-          <Modal.Body className="p-4 pt-0">
-            <Row className="align-items-center g-4">
-              <Col xs={12} md={5}>
-                <img src={getProductImage(activeProduct)} alt={activeProduct.title} style={styles.modalImage} />
-              </Col>
-              <Col xs={12} md={7}>
-                <span className="text-uppercase tracking-widest small text-muted fw-bold d-block mb-1">{activeProduct.type}</span>
-                <h3 style={{ fontWeight: '900', color: '#0F172A', fontFamily: "'Playfair Display', serif" }}>{activeProduct.title}</h3>
-                <p className="my-3 text-muted small" style={{ lineHeight: '1.6' }}>{activeProduct.description}</p>
-                
-                <hr style={{ opacity: 0.08 }} />
-                
-                <div className="mb-3">
-                  <h6 className="fw-bold small text-dark mb-2">✨ Top Elements</h6>
-                  {activeProduct.topNotes && activeProduct.topNotes.length > 0 ? (
-                    activeProduct.topNotes.map((n, i) => <span key={i} style={styles.noteBadge}>{n}</span>)
-                  ) : (
-                    <small className="text-muted italic">None specified</small>
-                  )}
-                </div>
-                
-                <div className="mb-3">
-                  <h6 className="fw-bold small text-dark mb-2">❤️ Heart Core Elements</h6>
-                  {activeProduct.heartNotes && activeProduct.heartNotes.length > 0 ? (
-                    activeProduct.heartNotes.map((n, i) => <span key={i} style={styles.noteBadge}>{n}</span>)
-                  ) : (
-                    <small className="text-muted italic">None specified</small>
-                  )}
-                </div>
-                
-                <div className="mb-3">
-                  <h6 className="fw-bold small text-dark mb-2">🪵 Base Sillage Anchors</h6>
-                  {activeProduct.baseNotes && activeProduct.baseNotes.length > 0 ? (
-                    activeProduct.baseNotes.map((n, i) => <span key={i} style={styles.noteBadge}>{n}</span>)
-                  ) : (
-                    <small className="text-muted italic">None specified</small>
-                  )}
-                </div>
-                
-                <div className="mt-4 pt-2 border-top d-flex justify-content-between align-items-center">
-                <small className="text-muted font-weight-bold">⚡ Vapor Evaporation Projection Lifespan: </small>
-                  <strong className="text-dark small">{activeProduct.longevity || '24+ Hours'}</strong>
-                </div>
-              </Col>
-            </Row>
-          </Modal.Body>
-        </Modal>
-      )}
-
-      {/* Dynamic DOM injection to apply clean luxury glass overlay styles rules explicitly */}
-      <style>{`
-        .custom-royal-glass-modal {
-          background: rgba(255, 255, 255, 0.8) !important;
-          backdrop-filter: blur(25px) saturate(150%) !important;
-          border: 1px solid rgba(255, 255, 255, 0.6) !important;
-          border-radius: 32px !important;
-          box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15) !important;
-          overflow: hidden;
-        }
-        .modal-backdrop.show {
-          opacity: 0.3;
-          background-color: #0F172A;
-        }
-      `}</style>
-    </div>
+      </Modal>
+    </main>
   );
 }
 

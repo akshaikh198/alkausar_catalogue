@@ -1,133 +1,277 @@
+
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import banner1 from '../assets/Images/Banner/w1.png';
-import banner2 from '../assets/Images/Banner/w2.png';
-import banner3 from '../assets/Images/Banner/w3.png';
 
-const styles = {
-  carousel: {
-    height: '85vh',
-    overflow: 'hidden',
+import banner1 from '../assets/Images/Banner/w1.png';
+import banner2 from '../assets/Images/Banner/w3.png';
+import banner3 from '../assets/Images/Banner/w2.png';
+
+const slides = [
+  {
+    image: banner1,
+    alt: 'Al-Kausar luxury attar collection',
   },
-  itemContainer: {
-    height: '85vh',
-    position: 'relative',
+  {
+    image: banner2,
+    alt: 'Al-Kausar signature fragrances',
   },
-  image: {
-    width: '100%',
-    height: '85vh',
-    objectFit: 'cover',
+  {
+    image: banner3,
+    alt: 'Al-Kausar premium fragrance collection',
   },
-  // Creates a dark overlay mask so text pops regardless of image background brightness
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6))',
-  },
-  caption: {
-    bottom: '25%',
-    textAlign: 'center',
-    zIndex: 2,
-    maxWidth: '700px',
-    margin: '0 auto',
-  },
-  title: {
-    fontSize: '3.5rem',
-    fontWeight: '800',
-    letterSpacing: '1px',
-    color: '#ffffff',
-    textShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
-    marginBottom: '1rem',
-  },
-  description: {
-    fontSize: '1.25rem',
-    color: '#f1f5f9',
-    textShadow: '0 2px 6px rgba(0, 0, 0, 0.4)',
-    marginBottom: '2rem',
-    fontWeight: '300',
-  },
-  ctaButton: {
-    background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-    color: '#ffffff',
-    border: 'none',
-    padding: '0.8rem 2.2rem',
-    fontSize: '1rem',
-    fontWeight: '600',
-    borderRadius: '30px',
-    cursor: 'pointer',
-    boxShadow: '0 4px 15px rgba(139, 92, 246, 0.4)',
-    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-  }
-};
+];
 
 function Header() {
-  // Array format to keep code DRY and maintainable
-  const slides = [
-    {
-      image: banner1,
-      alt: "Luxury Attars Collection",
-      title: "Exquisite Royal Attars",
-      desc: "Discover timeless, premium oil concentrations crafted to match your distinct persona.",
-      link: "#attars"
-    },
-    {
-      image: banner2,
-      alt: "Luxury Perfumes",
-      title: "Signature Perfumes",
-      desc: "Immerse yourself in complex, beautifully balanced modern long-lasting sprays.",
-      link: "#perfumes"
-    },
-    {
-      image: banner3,
-      alt: "Bakhoor & Incense",
-      title: "Aromatic Bakhoor",
-      desc: "Transform your spaces with rich, tranquil Middle Eastern home fragrance blends.",
-      link: "#bakhoor"
-    }
-  ];
-
   return (
-    <Carousel 
-      data-bs-theme="light" // Switched to light for white control indicators against dark overlay
-      style={styles.carousel} 
-      fade // Smooth crossfade transition between slides instead of hard slides
-      interval={5000} // Autoplay speed set to a comfortable 5 seconds
-    >
-      {slides.map((slide, index) => (
-        <Carousel.Item key={index} style={styles.itemContainer}>
-          <img
-            className="d-block"
-            style={styles.image}
-            src={slide.image}
-            alt={slide.alt}
-          />
-          {/* Tinted background layer */}
-          <div style={styles.overlay} />
-          
-          <Carousel.Caption style={styles.caption} className="animate-fade-in">
-            <h2 style={styles.title}>{slide.title}</h2>
-            <p style={styles.description}>{slide.desc}</p>
-            <button 
-              style={styles.ctaButton}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'scale(1.05)';
-                e.target.style.boxShadow = '0 6px 20px rgba(139, 92, 246, 0.6)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'scale(1)';
-                e.target.style.boxShadow = '0 4px 15px rgba(139, 92, 246, 0.4)';
-              }}
-              onClick={() => window.location.href = slide.link}
-            >
-              Explore Collection
-            </button>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <>
+      <section
+        className="ak-hero"
+        aria-label="Al-Kausar fragrance banners"
+      >
+
+        <Carousel
+          className="ak-hero-carousel"
+          fade
+          interval={5000}
+          pause={false}
+          controls={true}
+          indicators={true}
+          touch={true}
+        >
+
+          {slides.map((slide, index) => (
+            <Carousel.Item key={index}>
+
+              <div className="ak-hero-image-wrap">
+
+                <img
+                  className="ak-hero-image"
+                  src={slide.image}
+                  alt={slide.alt}
+                  fetchPriority={index === 0 ? 'high' : 'auto'}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+
+                <div className="ak-hero-overlay" />
+
+              </div>
+
+            </Carousel.Item>
+          ))}
+
+        </Carousel>
+
+      </section>
+
+      <style>{`
+
+        /* =================================
+           HERO SECTION
+        ================================= */
+
+        .ak-hero {
+          position: relative;
+          width: 100%;
+          height: clamp(320px, 85vh, 860px);
+          height: clamp(320px, 85svh, 860px);
+          overflow: hidden;
+          background: #080808;
+          margin: 0;
+          padding: 0;
+          z-index: 1;
+        }
+
+        /* =================================
+           CAROUSEL
+        ================================= */
+
+        .ak-hero-carousel {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .ak-hero-carousel .carousel-inner {
+          height: 100%;
+        }
+
+        .ak-hero-carousel .carousel-item {
+          height: 100%;
+        }
+
+        .ak-hero-image-wrap {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        /* =================================
+           SLIDER IMAGE
+        ================================= */
+
+        .ak-hero-image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center center;
+          transition: transform 6s ease;
+        }
+
+        .ak-hero-carousel .carousel-item.active .ak-hero-image {
+          transform: scale(1.03);
+        }
+
+        /* =================================
+           DARK OVERLAY
+        ================================= */
+
+        .ak-hero-overlay {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+
+          background: linear-gradient(
+            180deg,
+            rgba(0,0,0,0.35) 0%,
+            rgba(0,0,0,0.08) 35%,
+            rgba(0,0,0,0.15) 70%,
+            rgba(0,0,0,0.38) 100%
+          );
+
+          z-index: 1;
+        }
+
+        /* =================================
+           CAROUSEL CONTROLS
+        ================================= */
+
+        .ak-hero-carousel .carousel-control-prev,
+        .ak-hero-carousel .carousel-control-next {
+          width: 8%;
+          z-index: 5;
+          opacity: 0.75;
+        }
+
+        .ak-hero-carousel .carousel-control-prev:hover,
+        .ak-hero-carousel .carousel-control-next:hover {
+          opacity: 1;
+        }
+
+        .ak-hero-carousel .carousel-control-prev-icon,
+        .ak-hero-carousel .carousel-control-next-icon {
+          width: 35px;
+          height: 35px;
+          filter: drop-shadow(0 2px 5px rgba(0,0,0,0.7));
+        }
+
+        /* =================================
+           CAROUSEL INDICATORS
+        ================================= */
+
+        .ak-hero-carousel .carousel-indicators {
+          z-index: 6;
+          margin-bottom: 1.2rem;
+        }
+
+        .ak-hero-carousel .carousel-indicators [data-bs-target] {
+          width: 28px;
+          height: 4px;
+          border-radius: 10px;
+          margin-inline: 5px;
+          background-color: #D4AF37;
+          opacity: 0.55;
+        }
+
+        .ak-hero-carousel .carousel-indicators .active {
+          opacity: 1;
+        }
+
+        /* =================================
+           TABLET RESPONSIVE
+        ================================= */
+
+        @media (max-width: 991.98px) {
+
+          .ak-hero {
+            height: clamp(350px, 65svh, 650px);
+          }
+
+          .ak-hero-image {
+            object-position: center center;
+          }
+
+          .ak-hero-carousel .carousel-control-prev,
+          .ak-hero-carousel .carousel-control-next {
+            width: 10%;
+          }
+
+        }
+
+        /* =================================
+           MOBILE RESPONSIVE
+        ================================= */
+
+        @media (max-width: 767.98px) {
+
+          .ak-hero {
+            height: clamp(300px, 55svh, 480px);
+          }
+
+          .ak-hero-image {
+            object-position: center center;
+          }
+
+          .ak-hero-carousel .carousel-control-prev,
+          .ak-hero-carousel .carousel-control-next {
+            width: 12%;
+          }
+
+          .ak-hero-carousel .carousel-indicators {
+            margin-bottom: 0.7rem;
+          }
+
+          .ak-hero-carousel .carousel-indicators [data-bs-target] {
+            width: 18px;
+            height: 3px;
+            margin-inline: 4px;
+          }
+
+        }
+
+        /* =================================
+           SMALL MOBILE
+        ================================= */
+
+        @media (max-width: 380px) {
+
+          .ak-hero {
+            height: 300px;
+          }
+
+          .ak-hero-carousel .carousel-control-prev,
+          .ak-hero-carousel .carousel-control-next {
+            width: 14%;
+          }
+
+        }
+
+        /* =================================
+           REDUCED MOTION ACCESSIBILITY
+        ================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+          .ak-hero-image,
+          .ak-hero-carousel .carousel-item {
+            transition: none !important;
+          }
+
+        }
+
+      `}</style>
+    </>
   );
 }
 

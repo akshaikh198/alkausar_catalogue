@@ -1,180 +1,144 @@
-import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import { useNavigate } from 'react-router-dom';
 
-// Dummy or real placeholder paths for collection thumbnails
-import attarImg from '../assets/Images/Mix/attar.jpg'; 
-import perfumeImg from '../assets/Images/Mix/perfume.jpg';
-import bakhoorImg from '../assets/Images/Mix/bakhoor.jpg';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const styles = {
-  section: {
-    padding: '5rem 0',
-    backgroundColor: '#fafafa',
-  },
-  trustBar: {
-    backgroundColor: '#ffffff',
-    padding: '2.5rem 1.5rem',
-    borderRadius: '16px',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.02)',
-    marginBottom: '5rem',
-  },
-  trustIcon: {
-    fontSize: '2rem',
-    marginBottom: '0.5rem',
-    display: 'block'
-  },
-  trustTitle: {
-    fontWeight: '700',
-    fontSize: '1.1rem',
-    color: '#1e293b',
-    margin: 0
-  },
-  trustDesc: {
-    fontSize: '0.9rem',
-    color: '#64748b',
-    marginTop: '0.25rem'
-  },
-  sectionHeading: {
-    fontSize: '2.5rem',
-    fontWeight: '800',
-    textAlign: 'center',
-    marginBottom: '3rem',
-    background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-  },
-  collectionCard: {
-    border: 'none',
-    borderRadius: '16px',
-    overflow: 'hidden',
-    cursor: 'pointer',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  },
-  cardImage: {
-    height: '350px',
-    objectFit: 'cover',
-    transition: 'transform 0.5s ease',
-  },
-  cardOverlay: {
-    background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    padding: '2rem',
-  },
-  cardTitle: {
-    color: '#ffffff',
-    fontSize: '1.75rem',
-    fontWeight: '700',
-    margin: 0,
-  },
-  cardSubtitle: {
-    color: '#cbd5e1',
-    fontSize: '0.95rem',
-    marginTop: '0.5rem',
-  }
-};
+import muskImage from "../assets/Images/Mix/musk_al_jawara2.png";
+import sixMlImage from "../assets/Images/Edited/bottlebox/6ml/Ameage 6ml Bottle & Box.png";
 
-
-// Reusable card wrapper component to handle individual mouse-hover zoom interactions
-function HoverCard({ image, title, subtitle, link }) {
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <Card 
-      style={{
-        ...styles.collectionCard,
-        transform: hovered ? 'translateY(-8px)' : 'translateY(0)',
-        boxShadow: hovered ? '0 12px 30px rgba(139, 92, 246, 0.2)' : '0 4px 20px rgba(0,0,0,0.05)'
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onClick={() => window.location.href = link}
-    >
-      <div style={{ overflow: 'hidden', position: 'relative' }}>
-        <Card.Img 
-          variant="top" 
-          src={image} 
-          style={{
-            ...styles.cardImage,
-            transform: hovered ? 'scale(1.06)' : 'scale(1)'
-          }} 
-        />
-        <Card.ImgOverlay style={styles.cardOverlay}>
-          <Card.Title style={styles.cardTitle}>{title}</Card.Title>
-          <Card.Text style={styles.cardSubtitle}>{subtitle}</Card.Text>
-        </Card.ImgOverlay>
-      </div>
-    </Card>
-  );
-}
-
-function FeaturedSection() {
-
+const FeaturedSection = () => {
   const navigate = useNavigate();
-  
+
+  const features = [
+    {
+      icon: "♢",
+      title: "Synthetic Perfumery Compounds",
+      description:
+        "Premium, undiluted concentrations engineered meticulously for unmatched sillage and structural depth.",
+    },
+    {
+      icon: "◷",
+      title: "24+ Hour Projection",
+      description:
+        "Expertly formulated to radiate and evolve beautifully on your skin throughout the day.",
+    },
+  ];
+
+  const gold = 'rgb(210, 170, 86)';
+const dark = 'rgb(0, 0, 0)';
+const ivory = 'rgb(255, 255, 255)';
+
+  const collections = [
+    {
+      id: "100gm",
+      title: "100gm",
+      subtitle: "Luxury signature high-projection variants",
+      image: muskImage,
+      alt: "Luxury 100gm perfume collection",
+    },
+    {
+      id: "6ml",
+      title: "6ML",
+      subtitle: "Pure non-alcoholic perfume oils",
+      image: sixMlImage,
+      alt: "Luxury 6ML perfume oil bottle and box",
+    },
+  ];
+
   return (
-    <section style={styles.section}>
-      <Container>
-        
-        {/* 1. BRAND TRUST / VALUE PROPOSITION BAR */}
-        <div style={styles.trustBar}>
-          <Row className="text-center gy-4">
-            <Col xs={12} md={4}>
-              <span style={styles.trustIcon}>💎</span>
-              <h5 style={styles.trustTitle}>100% Pure Oils</h5>
-              <p style={styles.trustDesc}>Premium, undiluted concentration for lasting depth.</p>
-            </Col>
-            <Col xs={12} md={4} className="border-start-md border-end-md">
-              <span style={styles.trustIcon}>⏳</span>
-              <h5 style={styles.trustTitle}>24+ Hour Projection</h5>
-              <p style={styles.trustDesc}>Expertly formulated to radiate beautifully all day.</p>
-            </Col>
-            <Col xs={12} md={4}>
-              <span style={styles.trustIcon}>📦</span>
-              <h5 style={styles.trustTitle}>Free Premium Delivery</h5>
-              <p style={styles.trustDesc}>Secure, elegant packaging shipped straight to you.</p>
-            </Col>
-          </Row>
+    <section className="ak-featured-section">
+      <div className="ak-featured-container">
+
+        {/* BRAND PROMISE */}
+        <div className="ak-promise-section">
+
+          <div className="ak-promise-label">
+            <span className="ak-label-line" />
+            <span>OUR PROMISE</span>
+            <span className="ak-label-line" />
+          </div>
+
+          <div className="ak-features-grid">
+            {features.map((feature, index) => (
+              <div className="ak-feature-card" key={index}>
+                <div className="ak-feature-icon">
+                  {feature.icon}
+                </div>
+
+                <div className="ak-feature-content">
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
-        {/* 2. FEATURED COLLECTIONS GRID */}
-        <h2 style={styles.sectionHeading}>Shop By Category</h2>
-        <Row className="g-4">
-          <Col xs={12} md={4} onClick={() => navigate(`/collection/attars`)}>
-            <HoverCard 
-              image={attarImg} 
-              title="Attars" 
-              subtitle="Pure non-alcoholic concentrated oils" 
-              link="#attars"
-            />
-          </Col>
-          <Col xs={12} md={4} onClick={() => navigate(`/collection/perfumes`)}>
-            <HoverCard 
-              image={perfumeImg} 
-              title="Perfumes" 
-              subtitle="Luxury signature spray variants" 
-              link="#perfumes"
-            />
-          </Col>
-          <Col xs={12} md={4} onClick={() => navigate(`/collection/bakhoor`)}>
-            <HoverCard 
-              image={bakhoorImg} 
-              title="Bakhoor" 
-              subtitle="Rich home incense chips & blends" 
-              link="#bakhoor"
-            />
-          </Col>
-        </Row>
+        {/* CATEGORY HEADING */}
+        <div className="ak-category-heading">
+          <h2>
+            Shop By <span>Category</span>
+          </h2>
 
-      </Container>
+          <div className="ak-heading-decoration">
+            <span />
+            <i>✧</i>
+            <span />
+          </div>
+        </div>
+
+        {/* COLLECTIONS */}
+        <div className="ak-collections-grid">
+          {collections.map((collection) => (
+            <article
+              className="ak-collection-card"
+              key={collection.id}
+              onClick={() =>
+                navigate(`/collection/${collection.id}`)
+              }
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  navigate(`/collection/${collection.id}`);
+                }
+              }}
+              role="link"
+              tabIndex={0}
+              aria-label={`Shop ${collection.title} collection`}
+            >
+              <div className="ak-collection-image">
+                <img
+                  src={collection.image}
+                  alt={collection.alt}
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="ak-collection-info">
+                <h3>{collection.title}</h3>
+
+                <p>{collection.subtitle}</p>
+
+                <button
+                  type="button"
+                  className="ak-shop-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/collection/${collection.id}`);
+                  }}
+                  aria-label={`Shop ${collection.title}`}
+                >
+                  Shop Now
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+
+      </div>
     </section>
   );
-}
+};
 
 export default FeaturedSection;

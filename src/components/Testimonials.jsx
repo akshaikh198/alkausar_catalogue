@@ -1,140 +1,316 @@
-import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-const styles = {
-  section: {
-    padding: '7rem 0',
-    background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)', // Elegant midnight backdrop
-    position: 'relative',
-    overflow: 'hidden',
-    borderTop: '1px solid rgba(212, 175, 55, 0.15)'
-  },
-  goldLine: {
-    width: '60px',
-    height: '2px',
-    background: 'linear-gradient(90deg, transparent, #D4AF37, transparent)',
-    margin: '1rem auto 3.5rem auto',
-  },
-  heading: {
-    fontSize: '2.5rem',
-    fontWeight: '900',
-    color: '#F8FAFC',
-    fontFamily: "'Cinzel', 'Playfair Display', serif",
-    textAlign: 'center',
-    letterSpacing: '1px'
-  },
-  glassCard: {
-    background: 'rgba(255, 255, 255, 0.03)',
-    backdropFilter: 'blur(20px) saturate(140%)',
-    border: '1px solid rgba(212, 175, 55, 0.15)',
-    borderRadius: '28px',
-    padding: '2.5rem',
-    position: 'relative',
-    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between'
-  },
-  quoteIcon: {
-    fontFamily: 'serif',
-    fontSize: '4rem',
-    color: 'rgba(212, 175, 55, 0.15)',
-    position: 'absolute',
-    top: '10px',
-    left: '20px',
-    lineHeight: '1'
-  },
-  reviewText: {
-    color: '#E2E8F0',
-    fontSize: '0.95rem',
-    lineHeight: '1.7',
-    fontStyle: 'italic',
-    marginBottom: '1.5rem',
-    position: 'relative',
-    zIndex: 2
-  },
-  clientName: {
-    color: '#FFFFFF',
-    fontWeight: '800',
-    fontSize: '1rem',
-    fontFamily: "'Playfair Display', serif",
-    letterSpacing: '0.5px'
-  },
-  clientTitle: {
-    color: '#D4AF37',
-    fontSize: '0.75rem',
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
-    display: 'block',
-    marginTop: '0.25rem'
-  },
-  starRating: {
-    color: '#D4AF37',
-    fontSize: '0.85rem',
-    marginBottom: '1rem'
-  }
+import React, { useState, useEffect, useRef } from "react";
+import Container from "react-bootstrap/Container";
+
+import { testimonialsData } from "../data/Testimonials";
+
+// ==========================================
+// TESTIMONIAL CARD
+// ==========================================
+
+const TestimonialCard = ({ item }) => {
+  const getInitials = (name) => {
+    if (!name) return "AK";
+
+    const parts = name.trim().split(/\s+/);
+
+    return parts.length > 1
+      ? `${parts[0][0]}${parts[1][0]}`.toUpperCase()
+      : name.slice(0, 2).toUpperCase();
+  };
+
+  return (
+    <article className="ak-testimonial-card">
+
+      {/* DECORATIVE QUOTE */}
+      <span className="ak-testimonial-quote">“</span>
+
+      {/* PRODUCT AND RATING */}
+      <div className="ak-testimonial-top">
+
+        <span className="ak-testimonial-product">
+          <span>✧</span>
+          {item.product}
+        </span>
+
+        <div
+          className="ak-testimonial-stars"
+          aria-label={`Customer rating: ${item.stars}`}
+        >
+          {item.stars}
+        </div>
+
+      </div>
+
+      {/* REVIEW */}
+      <div className="ak-testimonial-review">
+        <p>{item.text}</p>
+      </div>
+
+      {/* CUSTOMER INFORMATION */}
+      <div className="ak-testimonial-footer">
+
+        <div className="ak-testimonial-author">
+
+          <div className="ak-testimonial-avatar">
+            {getInitials(item.name)}
+          </div>
+
+          <div className="ak-testimonial-author-info">
+            <h4>{item.name}</h4>
+            <span>{item.designation}</span>
+          </div>
+
+        </div>
+
+        <div className="ak-verified-badge">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+
+          Verified
+        </div>
+
+      </div>
+
+    </article>
+  );
 };
 
-const internalReviews = [
-  {
-    text: "The Cambodian Oud absolute is a sensory masterpiece. It uncoils beautifully across hours, evolving from sharp sweet wood notes into a velvety rich mineral anchor that projects majestically.",
-    name: "Emir Al-Rahman",
-    title: "Private Connoisseur & Collector",
-    stars: "⭐⭐⭐⭐⭐"
-  },
-  {
-    text: "Swapping my mainstream signature fragrances for the House of Al Kausar's traditional non-alcoholic Attars was a revelation. The projection on skin handles extreme weather with flawless ease.",
-    name: "Lady Vivienne Stirling",
-    title: "Luxury Lifestyle Atelier Director",
-    stars: "⭐⭐⭐⭐⭐"
-  },
-  {
-    text: "Their Home Bakhoor fumigation chips transform spatial geometry entirely. It leaves behind an incredibly dense, peaceful amber trace that lingeringly perfumes fabrics for multiple days.",
-    name: "Haris Vardhan",
-    title: "Boutique Hospitality Architect",
-    stars: "⭐⭐⭐⭐⭐"
-  }
-];
-
-
+// ==========================================
+// MAIN TESTIMONIALS COMPONENT
+// ==========================================
 
 function Testimonials() {
-  const [reviews, setReviews] = useState(internalReviews);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Optional Hook: Fetches testimonials from backend if you decide to add a collection later
-  
+  const timerRef = useRef(null);
+
+  const totalItems = testimonialsData?.length || 0;
+
+  // ==========================================
+  // RESPONSIVE BREAKPOINTS
+  // ==========================================
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width < 768) {
+        setItemsPerView(1);
+      } else if (width < 992) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(3);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Maximum carousel position
+  const maxIndex = Math.max(0, totalItems - itemsPerView);
+
+  // Keep current position valid after resizing
+  useEffect(() => {
+    setCurrentIndex((previous) => Math.min(previous, maxIndex));
+  }, [maxIndex]);
+
+  // ==========================================
+  // NAVIGATION
+  // ==========================================
+
+  const handleNext = () => {
+    setCurrentIndex((previous) =>
+      previous >= maxIndex ? 0 : previous + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((previous) =>
+      previous <= 0 ? maxIndex : previous - 1
+    );
+  };
+
+  // ==========================================
+  // AUTO SLIDER
+  // ==========================================
+
+  useEffect(() => {
+    if (isPaused || totalItems <= itemsPerView) {
+      return;
+    }
+
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((previous) =>
+        previous >= maxIndex ? 0 : previous + 1
+      );
+    }, 4500);
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, [isPaused, maxIndex, totalItems, itemsPerView]);
+
+  // ==========================================
+  // EMPTY STATE
+  // ==========================================
+
+  if (totalItems === 0) {
+    return null;
+  }
+
+  // ==========================================
+  // RENDER
+  // ==========================================
+
   return (
-    <div style={styles.section}>
+    <section className="ak-testimonials-section">
+
       <Container>
-        <h2 style={styles.heading}>Patron Endorsements</h2>
-        <div style={styles.goldLine} />
-        
-        <Row className="g-4">
-          {reviews.map((review, i) => (
-            <Col key={i} xs={12} md={4}>
-              <div 
-                style={styles.glassCard}
-                onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.15)'}
+
+        {/* SECTION HEADER */}
+        <div className="ak-testimonials-header">
+
+          <div className="ak-testimonials-label">
+            <span />
+            CUSTOMER EXPERIENCES
+            <span />
+          </div>
+
+          <h2>
+            Our <span>Testimonials</span>
+          </h2>
+
+          <p>
+            Every fragrance tells a story. Discover what our
+            customers have to say about their experience
+            with AL-Kausar Perfumes.
+          </p>
+
+          <div className="ak-testimonials-decoration">
+            <span />
+            <i>✧</i>
+            <span />
+          </div>
+
+        </div>
+
+        {/* TESTIMONIAL CAROUSEL */}
+        <div
+          className="ak-testimonials-viewport"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget)) {
+              setIsPaused(false);
+            }
+          }}
+        >
+
+          <div
+            className="ak-testimonials-track"
+            style={{
+              transform: `translateX(-${
+                currentIndex * (100 / itemsPerView)
+              }%)`,
+            }}
+          >
+
+            {testimonialsData.map((item) => (
+              <div
+                className="ak-testimonial-slide"
+                key={item.id}
+                style={{
+                  width: `${100 / itemsPerView}%`,
+                }}
               >
-                <span style={styles.quoteIcon}>“</span>
-                <p style={styles.reviewText}>{review.text || review.description}</p>
-                <div>
-                  <div style={styles.starRating}>{review.stars || "⭐⭐⭐⭐⭐"}</div>
-                  <h5 style={styles.clientName}>{review.name || review.title}</h5>
-                  <span style={styles.clientTitle}>{review.title || review.subtitle}</span>
-                </div>
+                <TestimonialCard item={item} />
               </div>
-            </Col>
-          ))}
-        </Row>
+            ))}
+
+          </div>
+
+        </div>
+
+        {/* CAROUSEL CONTROLS */}
+        {maxIndex > 0 && (
+          <div className="ak-testimonials-controls">
+
+            <button
+              type="button"
+              className="ak-testimonial-arrow"
+              onClick={handlePrev}
+              aria-label="Previous testimonials"
+            >
+              ‹
+            </button>
+
+            {/* PAGINATION DOTS */}
+            <div className="ak-testimonial-dots">
+
+              {Array.from({ length: maxIndex + 1 }).map(
+                (_, index) => (
+                  <button
+                    type="button"
+                    key={index}
+                    className={`ak-testimonial-dot ${
+                      currentIndex === index ? "active" : ""
+                    }`}
+                    onClick={() => setCurrentIndex(index)}
+                    aria-label={`Go to testimonial position ${index + 1}`}
+                    aria-current={
+                      currentIndex === index ? "true" : undefined
+                    }
+                  />
+                )
+              )}
+
+            </div>
+
+            <button
+              type="button"
+              className="ak-testimonial-arrow"
+              onClick={handleNext}
+              aria-label="Next testimonials"
+            >
+              ›
+            </button>
+
+          </div>
+        )}
+
+        {/* BOTTOM BRAND SIGNATURE */}
+        <div className="ak-testimonials-signature">
+          <span>✧</span>
+          <p>THANK YOU FOR CHOOSING ALMAS PERFUMES</p>
+          <span>✧</span>
+        </div>
+
       </Container>
-    </div>
+
+    </section>
   );
 }
 
