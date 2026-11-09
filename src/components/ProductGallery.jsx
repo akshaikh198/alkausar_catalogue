@@ -8,7 +8,6 @@ import Modal from 'react-bootstrap/Modal';
 import { apiUrl } from '../api';
 
 const styles = {
-  
   section: {
     padding: '8rem 0 6rem 0',
     background: 'radial-gradient(circle at top, #FCFBF9 0%, #F3F1EC 100%)', // Elegant Luxury Light Mode Linen
