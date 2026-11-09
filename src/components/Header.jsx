@@ -216,7 +216,7 @@ function Header() {
         @media (max-width: 767.98px) {
 
           .ak-hero {
-            height: clamp(300px, 55svh, 480px);
+            height: clamp(85vh, 75svh, 480px);
           }
 
           .ak-hero-image {

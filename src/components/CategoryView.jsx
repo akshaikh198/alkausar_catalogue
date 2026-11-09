@@ -35,8 +35,7 @@ const getProductId = (product) => String(product._id || product.id || '');
 
 const getProductImage = (product, preferDesigner = false) => {
   const image = preferDesigner
-    ? product.designerBgImageUrl ||
-      product.whiteBgImageUrl ||
+    ? product.whiteBgImageUrl ||
       product.imageUrl ||
       product.image
     : product.whiteBgImageUrl ||
