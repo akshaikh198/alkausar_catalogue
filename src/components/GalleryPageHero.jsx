@@ -38,6 +38,8 @@ function GalleryPageHero() {
             DISCOVER YOUR SIGNATURE FRAGRANCE
           </p>
 
+
+
         </div>
 
         <div className="gallery-social-glass">
