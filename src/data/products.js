@@ -1,4 +1,42 @@
-export const STATIC_PRODUCTS = [
+const productImages = import.meta.glob(
+  "../assets/Images/**/*.{png,jpg,jpeg,webp,avif,svg}",
+  {
+    eager: true,
+    import: "default",
+  }
+);
+
+// Default Al Kausar logo
+
+const DEFAULT_PRODUCT_IMAGE =
+  productImages["../assets/Images/Logo/Al_Kausar_Logo.png"] || "";
+
+const resolveProductImage = (imagePath) => {
+  // If image path is empty, use default logo
+  if (!imagePath) {
+    return DEFAULT_PRODUCT_IMAGE;
+  }
+
+  const normalizedPath = imagePath
+    .replace(/\\/g, "/")
+    .replace(/^\.\/src\//, "../")
+    .replace(/^\.\//, "../");
+
+  const resolvedImage = productImages[normalizedPath];
+
+  // If image doesn't exist, use Al Kausar logo
+  if (!resolvedImage) {
+    console.warn(
+      `Product image not found: ${imagePath}. Using default logo.`
+    );
+
+    return DEFAULT_PRODUCT_IMAGE;
+  }
+
+  return resolvedImage;
+};
+
+const RAW_STATIC_PRODUCTS = [
   // ==========================================
   // AL KAUSAR 100 ML (100GM) COLLECTION
   // ==========================================
@@ -11,8 +49,8 @@ export const STATIC_PRODUCTS = [
     topNotes: ["Chocolate", "Grapes", "Citrus"],
     heartNotes: ["Caramel", "Spices", "Floral Notes"],
     baseNotes: ["Agarwood (Oud)", "Musk", "Warm Amber"],
-    whiteBgImageUrl: "",
-    designerBgImageUrl: ""
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Kausar_Mousuf.png",
+    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_kausar_mousuf.png"
   },
   {
     _id: "p2",
@@ -24,7 +62,7 @@ export const STATIC_PRODUCTS = [
     heartNotes: ["Rich Agarwood", "Smoky Cedar"],
     baseNotes: ["Amber", "Sandalwood", "Precious Musk"],
     whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/AL Kausar Oudh 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Al_kausar_oudh.jpeg"
+    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Al_kausar_oudh.png"
   },
   {
     _id: "p3",
@@ -1147,3 +1185,16 @@ export const STATIC_PRODUCTS = [
     designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/noora_6ml.png"
   }
 ];
+
+// Export products with Vite-resolved production images
+export const STATIC_PRODUCTS = RAW_STATIC_PRODUCTS.map((product) => ({
+  ...product,
+
+  whiteBgImageUrl: resolveProductImage(
+    product.whiteBgImageUrl
+  ),
+
+  designerBgImageUrl: resolveProductImage(
+    product.designerBgImageUrl
+  ),
+}));
