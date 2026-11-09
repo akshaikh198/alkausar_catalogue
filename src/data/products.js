@@ -11,8 +11,8 @@ export const STATIC_PRODUCTS = [
     topNotes: ["Chocolate", "Grapes", "Citrus"],
     heartNotes: ["Caramel", "Spices", "Floral Notes"],
     baseNotes: ["Agarwood (Oud)", "Musk", "Warm Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Kausar_Mousuf.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_kausar_mousuf.png"
+    whiteBgImageUrl: "",
+    designerBgImageUrl: ""
   },
   {
     _id: "p2",
