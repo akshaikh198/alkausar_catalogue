@@ -352,11 +352,11 @@ function Footer() {
           </div>
 
           {/* FINAL BRAND SIGNATURE */}
-          <div className="ak-footer-signature">
+          {/* <div className="ak-footer-signature">
             <span>✧</span>
             THE ART OF FINE FRAGRANCE
             <span>✧</span>
-          </div>
+          </div> */}
 
         </div>
 
