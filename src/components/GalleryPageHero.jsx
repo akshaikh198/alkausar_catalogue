@@ -37,9 +37,6 @@ function GalleryPageHero() {
           <p className="gallery-heading-subtitle">
             DISCOVER YOUR SIGNATURE FRAGRANCE
           </p>
-
-
-
         </div>
 
         <div className="gallery-social-glass">
