@@ -3214,6 +3214,15 @@ div, button, a, img {
   border-right: 1px solid rgba(210, 170, 86, 0.25);
 }
 
+.ak-cta-logo{
+  height: 50px;
+  margin-bottom: 10px;
+  filter: brightness(0) saturate(100%)
+    invert(57%) sepia(27%) saturate(702%)
+    hue-rotate(1deg) brightness(90%);
+  
+}
+
 .ak-cta-decoration-inner {
   display: flex;
   flex-direction: column;

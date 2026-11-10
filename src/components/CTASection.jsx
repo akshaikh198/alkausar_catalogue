@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import logo from "../assets/Images/Logo/Al_Kausar_Logo.png";
 
 function CTASection() {
   return (
@@ -19,6 +20,8 @@ function CTASection() {
           <div className="ak-cta-decoration">
             <div className="ak-cta-decoration-inner">
               <span>✧</span>
+              <div className="ak-cta-decoration-line" />
+              <img src={logo} alt="Al Kausar Perfumes Logo" className="ak-cta-logo" />
               <div className="ak-cta-decoration-line" />
               <span>AL KAUSAR</span>
               <span className="ak-cta-decoration-small">

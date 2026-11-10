@@ -304,7 +304,7 @@ function Testimonials() {
         {/* BOTTOM BRAND SIGNATURE */}
         <div className="ak-testimonials-signature">
           <span>✧</span>
-          <p>THANK YOU FOR CHOOSING ALMAS PERFUMES</p>
+          <p>THANK YOU FOR CHOOSING AL-KAUSAR PERFUMES</p>
           <span>✧</span>
         </div>
 
