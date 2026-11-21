@@ -1419,11 +1419,11 @@ div, button, a, img {
   position: relative;
   height: 250px;
   overflow: hidden;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     #FFFFFF,
     rgba(210, 170, 86, 0.30)
-  );
+  ); */
 }
 
 .ak-product-image {
@@ -1444,11 +1444,11 @@ div, button, a, img {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to top,
     rgba(48, 35, 20, 0.09),
     transparent 40%
-  );
+  ); */
 }
 
 .ak-product-image-fallback {
@@ -4554,7 +4554,7 @@ a:hover {
   display: inline-block;
   color: var(--ak-gold);
   font-size: 0.62rem;
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
 }

@@ -34,9 +34,9 @@ const ProductCard = ({ product, navigate }) => {
       aria-label={`Explore ${product.title}`}
     >
       {/* PRODUCT TYPE BADGE */}
-      <span className="ak-product-badge">
+      {/* <span className="ak-product-badge">
         {product.type}
-      </span>
+      </span> */}
 
       {/* PRODUCT IMAGE */}
       <div className="ak-product-image-wrapper">
@@ -90,7 +90,7 @@ const ProductCard = ({ product, navigate }) => {
             handleNavigate();
           }}
         >
-          Examine Collection
+          View Collection
           <span>→</span>
         </button>
 
