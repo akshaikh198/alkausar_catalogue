@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
-/* src/index.css */
-@import url('https://googleapis.com');
+@import "tailwindcss";
 
-/* Apply systemic clean baseline fallbacks across global layers */
+
 body {
-  font-family: "Bungee", sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -574,6 +571,7 @@ div, button, a, img {
   --ak-text: #000000;
   --ak-muted: #333333;
   --ak-border: rgba(210, 170, 86, 0.30);
+  --card-bg:#C8CAC7;
 
   position: relative;
   padding: 65px 0 75px;
@@ -1366,7 +1364,7 @@ div, button, a, img {
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  background: var(--ak-white);
+  background: var(--card-bg);
   border: 1px solid var(--ak-border) !important;
   border-radius: 15px !important;
   box-shadow: 0 7px 23px rgba(65, 48, 28, 0.055);
@@ -1419,7 +1417,7 @@ div, button, a, img {
 
 .ak-product-image-wrapper {
   position: relative;
-  height: 335px;
+  height: 250px;
   overflow: hidden;
   background: linear-gradient(
     135deg,
@@ -1432,8 +1430,8 @@ div, button, a, img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit:cover;
+  object-position:inherit;
   transition:
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1487,7 +1485,7 @@ div, button, a, img {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: 23px 22px 24px !important;
+  padding: 13px 18px 14px !important;
 }
 
 .ak-product-category {
@@ -1501,16 +1499,12 @@ div, button, a, img {
 .ak-product-title {
   display: -webkit-box;
   width: 100%;
-  min-height: 54px;
-  margin: 0 0 14px !important;
   overflow: hidden;
   color: var(--ak-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 21px;
   font-weight: 600;
-  line-height: 1.35;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
 }
 
 .ak-product-performance {
@@ -1518,7 +1512,7 @@ div, button, a, img {
   align-items: center;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: var(--ak-muted);
   font-size: 11px;
 }
@@ -3606,6 +3600,8 @@ div, button, a, img {
   --ak-background: #FFFFFF;
   --ak-surface: #FFFFFF;
   --ak-border: rgba(210, 170, 86, 0.30);
+  --card-bg:#C8CAC7;
+
 
   --bs-primary: #D2AA56;
   --bs-primary-rgb: 210, 170, 86;
@@ -4736,14 +4732,14 @@ a:hover {
 .ak-product-modal {
   overflow: hidden;
   border: 1px solid rgba(210, 170, 86, 0.5);
-  border-radius: 0 !important;
+  border-radius: 10px !important;
   background: var(--ak-white);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
 }
 
 .ak-product-modal-header {
-  min-height: 55px;
-  padding: 16px 22px;
+  min-height: 25px;
+  padding: 10px 22px;
   border-bottom: 1px solid rgba(210, 170, 86, 0.25);
   background: var(--ak-white);
 }
@@ -4753,7 +4749,7 @@ a:hover {
 }
 
 .ak-product-modal .modal-body {
-  padding: 30px;
+  padding:10px 30px;
 }
 
 .ak-product-modal-image-wrap {
@@ -4762,7 +4758,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #f7f7f7;
+  background: #692323;
 }
 
 .ak-product-modal-image {
@@ -4777,7 +4773,7 @@ a:hover {
 }
 
 .ak-product-modal-content h2 {
-  margin: 12px 0;
+  margin: 5px 0;
   color: var(--ak-black);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight: 600;
@@ -4787,12 +4783,12 @@ a:hover {
 .ak-product-modal-line {
   width: 50px;
   height: 2px;
-  margin: 18px 0;
+  margin: 5px 0;
   background: var(--ak-gold);
 }
 
 .ak-product-modal-description {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   color: var(--ak-muted);
   font-size: 0.87rem;
   line-height: 1.9;
@@ -4837,7 +4833,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 25px;
   padding-top: 16px;
   border-top: 1px solid rgba(210, 170, 86, 0.35);
 }
@@ -5359,8 +5354,9 @@ a:hover {
   padding: 12px 18px;
   border: 1px solid #D2AA56;
   color: #FFFFFF;
+  background: #d2aa56;
   font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
   transform: translateY(12px);
@@ -5379,11 +5375,18 @@ a:hover {
 
 .gallery-product-body {
   padding: 24px 20px 20px;
+  background:rgb(245, 230, 165, 0.5);
   text-align: center;
+  border-top: 3px solid #d2aa56;
+}
+
+.product-type{
+  font-size: 14px;
+  padding-top: 0;
 }
 
 .gallery-product-category {
-  color: #A98132;
+  color: #a98132;
   font-family: 'Cinzel', serif;
   font-size: 9px;
   font-weight: 800;
@@ -5391,12 +5394,10 @@ a:hover {
 }
 
 .gallery-product-title {
-  margin: 10px 0 15px;
   color: #000000;
   font-family: 'Playfair Display', serif;
   font-size: clamp(12px, 2vw, 18px);
   font-weight: 700;
-  line-height: 1.35;
 }
 
 .gallery-product-meta {
@@ -5653,7 +5654,7 @@ a:hover {
 
 .gallery-modal-image {
   width: 100%;
-  height: 380px;
+  height: 50vh;
   display: block;
   object-fit: cover;
 }
@@ -5863,7 +5864,7 @@ a:hover {
   }
 
   .gallery-product-title {
-    font-size: 21px;
+    font-size: 11px;
   }
 
   .gallery-product-image-overlay {

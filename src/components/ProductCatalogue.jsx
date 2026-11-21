@@ -41,7 +41,7 @@ const ProductCard = ({ product, navigate }) => {
       {/* PRODUCT IMAGE */}
       <div className="ak-product-image-wrapper">
         <img
-          src={product.designerBgImageUrl}
+          src={product.whiteBgImageUrl}
           alt={product.title || "Luxury perfume"}
           className="ak-product-image"
           loading="lazy"

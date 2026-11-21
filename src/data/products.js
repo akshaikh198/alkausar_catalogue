@@ -49,8 +49,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Chocolate", "Grapes", "Citrus"],
     heartNotes: ["Caramel", "Spices", "Floral Notes"],
     baseNotes: ["Agarwood (Oud)", "Musk", "Warm Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Kausar_Mousuf.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_kausar_mousuf.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MOUSUF.webp"
   },
   {
     _id: "p2",
@@ -61,20 +60,18 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Saffron"],
     heartNotes: ["Rich Agarwood", "Smoky Cedar"],
     baseNotes: ["Amber", "Sandalwood", "Precious Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/AL Kausar Oudh 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Al_kausar_oudh.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/AL Kausar Oudh 100 gm Box & Bottle.png"
   },
   {
     _id: "p3",
-    title: "Al Kausar Oud Al Haram",
+    title: "Oud Al Haram",
     type: "100GM",
     longevity: "24+ Hours",
     description: "Embrace the spiritual serenity of Al Kausar Oud Al Haram, featuring meditative frankincense, sacred woods, and sweet oriental amber. A deeply soothing and long-lasting attar that envelopes your senses with pure peace, purity, and reverence.",
     topNotes: ["Frankincense", "Taif Rose"],
     heartNotes: ["Aged Oud", "Warm Spices"],
     baseNotes: ["Sweet Amber", "White Musk", "Cedarwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Oud Al Haram100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/oud_al_haram.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/OUD AL HARAM.webp"
   },
   {
     _id: "p4",
@@ -85,8 +82,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Oregano", "Pimento Berry", "Bergamot"],
     heartNotes: ["Incense", "Opoponax", "Amber"],
     baseNotes: ["Leather", "Agarwood Smoke", "Patchouli"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Ameage_Interdude.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Ameage_Interdude.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/AMAEAGE INTELUT .webp"
   },
   {
     _id: "p5",
@@ -97,8 +93,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Cinnamon", "Nutmeg"],
     heartNotes: ["Caramelized Sugar", "Smooth Oud"],
     baseNotes: ["Vanilla Pod", "Amber", "Sandalwood"],
-    whiteBgImageUrl: "./assets/Images/whitebg/bottlebox/Ameer_Oudh.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Ameer_Oudh.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Ameer_Oudh.jpeg"
   },
   {
     _id: "p6",
@@ -109,20 +104,18 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Green Notes", "Grapefruit", "Mandarin"],
     heartNotes: ["Gardenia", "Ginger", "Aquatic Accord"],
     baseNotes: ["White Musk", "Sandalwood", "Guaiac Wood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aqua_212.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/aqua_212.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/AQUA 212.webp"
   },
   {
     _id: "p7",
-    title: "Aqua Zoo'",
+    title: "Aqua Zoo",
     type: "100GM",
     longevity: "24+ Hours",
     description: "Dive straight into ocean freshness with Aqua Zoo', an ultra-cooling marine fragrance featuring bracing sea spray and sunlit citrus. It delivers a lively, breezy burst of freshness that uplifts your mood while ensuring non-stop everyday comfort.",
     topNotes: ["Sea Salt", "Lemon Zest", "Calone"],
     heartNotes: ["Crushed Mint", "Neroli", "Blue Sage"],
     baseNotes: ["Driftwood", "Mineral Amber", "Clean Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aqua_Zoo.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Aqua_zoo.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/AQUA ZOO.webp"
   },
   {
     _id: "p8",
@@ -133,8 +126,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fresh Citrus", "Marine"],
     heartNotes: ["Ambergris", "Soft Floral"],
     baseNotes: ["Musk", "Warm Amber", "Woody"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Addictive_Ambergris.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/addictive_Ambergris.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/ADDICTIVE AMBERGRIS.webp"
   },
   {
     _id: "p9",
@@ -145,8 +137,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Saffron", "Bitter Almond"],
     heartNotes: ["Jasmine Sambac", "Spun Sugar"],
     baseNotes: ["Ambergris", "Cedarwood", "Cashmeran"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Barkat_Rouge.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Barkat_rouge.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Barkat_Rouge.jpeg"
   },
   {
     _id: "p10",
@@ -157,8 +148,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Pepper", "Cardamom"],
     heartNotes: ["Dark Coffee", "Ebony Wood"],
     baseNotes: ["Smoky Amber", "Patchouli", "Black Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black_Heart.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Black_heart.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Black_Heart.jpeg"
   },
   {
     _id: "p11",
@@ -169,8 +159,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Crimson Rose", "Mandarin"],
     heartNotes: ["Aged Agarwood", "French Labdanum"],
     baseNotes: ["Dark Patchouli", "Musk", "Leather"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black Oud 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Black_Oud.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/BLACK OUD.webp"
   },
   {
     _id: "p12",
@@ -181,8 +170,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Grapefruit", "Spices"],
     heartNotes: ["Geranium", "Magnolia", "Violet Leaves"],
     baseNotes: ["Vetiver", "Cedarwood", "Patchouli"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black_Touch.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Black_touch.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Black_Touch.jpeg"
   },
   {
     _id: "p13",
@@ -193,8 +181,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Pink Pepper", "Green Apple"],
     heartNotes: ["Lavender", "Birch Leaves", "Leather"],
     baseNotes: ["Oakmoss", "Dry Amber", "Cedar"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black Horse 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Black_horse.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/BLACK HORSE.webp"
   },
   {
     _id: "p14",
@@ -205,8 +192,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Clementine", "Almond Blossom"],
     heartNotes: ["Amaryllis", "Jasmine", "Peony"],
     baseNotes: ["Bourbon Vanilla", "White Musk", "Golden Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Cinema 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/cinema.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/CINEMA .webp"
   },
   {
     _id: "p15",
@@ -217,8 +203,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Calabrian Bergamot", "Grapefruit", "Aquatic Notes"],
     heartNotes: ["Violet Leaf", "Papyrus Wood", "Black Pepper"],
     baseNotes: ["Ambroxan", "Incense", "Tonka Bean"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Dylan_Blue.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Dylan_blue.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Dylan_Blue.jpeg"
   },
   {
     _id: "p16",
@@ -229,8 +214,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fruity Accord", "Bergamot"],
     heartNotes: ["White Lily", "Freesia", "Orchid"],
     baseNotes: ["Clean Sandalwood", "White Musk", "Soft Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/E Collection 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/e_collection.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/E COLLECTION .webp"
   },
   {
     _id: "p17",
@@ -241,8 +225,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Peach", "Fruity Accord"],
     heartNotes: ["Damascus Rose", "Saffron", "Lily"],
     baseNotes: ["Vanilla", "Precious Woods", "Ambergris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Ehsaas Al Arabia 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Ehsaas_Al_Arabia.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Ehsaas Al Arabia.webp"
   },
   {
     _id: "p18",
@@ -253,8 +236,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Cardamom", "Golden Citrus"],
     heartNotes: ["Honeyed Amber", "Cinnamon", "Dry Woods"],
     baseNotes: ["Oud Wood", "Musk", "Warm Benzoin"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Emarat_Gold.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/emarat_gold.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Emarat_Gold.jpeg"
   },
   {
     _id: "p19",
@@ -265,8 +247,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Jasmine Flowers", "Saffron Sparkle"],
     heartNotes: ["Amberwood", "Soft Caramel"],
     baseNotes: ["Fir Resin", "Cedar", "White Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/E_Rouge.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/e_rouge.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/E_Rouge.jpeg"
   },
   {
     _id: "p20",
@@ -277,20 +258,18 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["French Lavender", "Chamomile"],
     heartNotes: ["Iris", "Soft Powdery Florals"],
     baseNotes: ["Clean Musk", "Sandalwood", "Creamy Vanilla"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Good_Night.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/good_night.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Good Night.webp"
   },
   {
     _id: "p21",
-    title: "Hawas",
+    title: "Hawaas",
     type: "100GM",
     longevity: "24+ Hours",
-    description: "Ignite your vitality with Hawas, an adventurous aquatic fragrance mingling crisp green apples, sweet plum, and oceanic breezes. An invigorating everyday companion that radiates youth, magnetic energy, and refreshing masculine confidence.",
+    description: "Ignite your vitality with Hawaas, an adventurous aquatic fragrance mingling crisp green apples, sweet plum, and oceanic breezes. An invigorating everyday companion that radiates youth, magnetic energy, and refreshing masculine confidence.",
     topNotes: ["Apple", "Bergamot", "Lemon", "Cinnamon"],
     heartNotes: ["Watery Notes", "Plum", "Orange Blossom"],
     baseNotes: ["Ambergris", "Musk", "Driftwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Hawas.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/hawas.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Hawaas.webp"
   },
   {
     _id: "p22",
@@ -301,8 +280,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Frozen Mint", "Italian Lemon", "Crisp Apple"],
     heartNotes: ["Ice Aquatic Accord", "Cardamom", "Star Anise"],
     baseNotes: ["Ambroxan", "Tonka Bean", "Clean Cedar"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Haw_As_Ice.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/haw_as_ice.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/HAW-AW ICE .webp"
   },
   {
     _id: "p23",
@@ -313,8 +291,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Citrus Blossom", "Sea Spray"],
     heartNotes: ["Tropical Frangipani", "Jasmine"],
     baseNotes: ["Driftwood", "Golden Amber", "Soft Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Jazira 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/jazira.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/JAZIRA.webp"
   },
   {
     _id: "p24",
@@ -325,8 +302,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Pepper", "Bergamot Zest"],
     heartNotes: ["Supple Leather", "Nutmeg", "Cacao"],
     baseNotes: ["Smoky Vetiver", "Agarwood", "Dark Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/King_Black.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/king_black.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/King_Black.jpeg"
   },
   {
     _id: "p25",
@@ -337,8 +313,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Mint Leaves", "Green Apple", "Lemon"],
     heartNotes: ["Tonka Bean", "Geranium", "Ambroxan"],
     baseNotes: ["Madagascar Vanilla", "Vetiver", "Cedarwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mabet Man 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Mabet_man.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MABET MAN.webp"
   },
   {
     _id: "p26",
@@ -349,8 +324,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fresh Herbs", "Bright Citrus"],
     heartNotes: ["Pure White Musk", "Geranium"],
     baseNotes: ["Subtle Oud", "Sandalwood", "Ambergris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Misk_Rijali_Oud.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/misk_rijali_oudh.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Misk Rijali Oudh.webp"
   },
   {
     _id: "p27",
@@ -361,8 +335,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Wild Blueberry", "Blackberry", "Sweet Lemon"],
     heartNotes: ["Raspberry Blossom", "Sugar Crystals"],
     baseNotes: ["Creamy Vanilla", "White Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mr Blueberry 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Mr_Blueberry.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MR BLUE BERRY .webp"
   },
   {
     _id: "p28",
@@ -373,8 +346,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Rose Petals", "Warm Saffron"],
     heartNotes: ["Precious Sandalwood", "Cardamom"],
     baseNotes: ["Golden Amber", "Traditional Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mukhallat_Badar.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/mukhallat_badar.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MUKHALLAT BADAR .webp"
   },
   {
     _id: "p29",
@@ -385,8 +357,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Cotton Candy", "Strawberry", "Bergamot"],
     heartNotes: ["Red Licorice", "Lily of the Valley"],
     baseNotes: ["Vanilla Pod", "Caramel", "Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Pink_Candy.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/pink_candy.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/PINK CANDY.webp"
   },
   {
     _id: "p30",
@@ -397,8 +368,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["White Lotus", "Powdery Notes"],
     heartNotes: ["Violet Petals", "Honeyed Floral Accord"],
     baseNotes: ["Creamy White Musk", "Sandalwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Musk Tahara 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_kausar_musk_tahara.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MUSK TAHARA .webp"
   },
   {
     _id: "p31",
@@ -409,8 +379,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Citrus Zest", "Green Leaves"],
     heartNotes: ["Spicy Clove", "Rose", "Geranium"],
     baseNotes: ["Cedarwood", "Earthy Musk", "Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Nasru.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/nasru.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Nasru.jpeg"
   },
   {
     _id: "p32",
@@ -421,8 +390,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Calabrian Lemon", "Sage", "Tagetes"],
     heartNotes: ["Praline", "Black Cardamom", "Cinnamon"],
     baseNotes: ["Black Amber", "Patchouli", "Rosewood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/XXS.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/xxs.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/XXS.jpeg"
   },
   {
     _id: "p33",
@@ -433,8 +401,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Wild Berries", "Spicy Pepper"],
     heartNotes: ["Dark Rose", "Night Jasmine"],
     baseNotes: ["Sensual Amber", "Vanilla", "Black Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/SX.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sx.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/SX.jpeg"
   },
   {
     _id: "p34",
@@ -445,8 +412,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Peach Blossom", "Soft Citrus"],
     heartNotes: ["Light Agarwood", "White Rose"],
     baseNotes: ["Creamy Vanilla", "Sandalwood", "Soft Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Softy_Oudh.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/softy_oudh.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Softy_Oudh.jpeg"
   },
   {
     _id: "p35",
@@ -457,8 +423,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Tea Leaves", "Cardamom"],
     heartNotes: ["Precious Oud", "Clove", "Dried Fruit"],
     baseNotes: ["Leather", "Smoky Cedar", "Warm Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Shay Oud 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/shay_oud.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Shay Oud.webp"
   },
   {
     _id: "p36",
@@ -469,8 +434,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Green Accord", "Lemon"],
     heartNotes: ["Freesia", "Lily of the Valley", "Magnolia"],
     baseNotes: ["White Musk", "Cedarwood", "Ambergris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Splendor.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/splendor.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Splendor.jpeg"
   },
   {
     _id: "p37",
@@ -481,8 +445,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Pepper", "Grapefruit"],
     heartNotes: ["Lavender", "Violet Leaves", "Nutmeg"],
     baseNotes: ["Patchouli", "Cedar", "White Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Police 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/police.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/POLICE .webp"
   },
   {
     _id: "p38",
@@ -493,8 +456,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bulgarian Rose", "Chamomile"],
     heartNotes: ["Moroccan Blue Rose", "Hedione"],
     baseNotes: ["Laotian Oud", "Papyrus", "Light Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Oud_Silk_Mood.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/oud_silk_mood.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Oud_Silk_Mood.jpeg"
   },
   {
     _id: "p39",
@@ -505,8 +467,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Coriander", "Crisp Bergamot"],
     heartNotes: ["Black Incense", "Guaiac Wood"],
     baseNotes: ["Dark Amber", "Patchouli", "Suede"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Smart Black 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottle/Smart Black Bottle.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Smart Black.webp"
   },
   {
     _id: "p40",
@@ -517,8 +478,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Saffron", "Cardamom"],
     heartNotes: ["Mysore Sandalwood", "Rosewood"],
     baseNotes: ["Aged Oud", "Golden Amber", "Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sandaliya_Oud.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sandaliya_oud.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/SANDALIYA OUD.webp"
   },
   {
     _id: "p41",
@@ -529,8 +489,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Green Mandarin", "Water Jasmine", "Ginger Lily"],
     heartNotes: ["Salted Vanilla", "Solar Notes"],
     baseNotes: ["Cashmere Wood", "Ambergris", "Sandalwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Olympean 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/olympean.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/OLYMPEAN.webp"
   },
   {
     _id: "p42",
@@ -541,8 +500,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Melon", "Eucalyptus", "Grapefruit"],
     heartNotes: ["Marine Accord", "Birch", "Rosemary"],
     baseNotes: ["Oakmoss", "Sandalwood", "Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Escape 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/escape.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/ESCAPE .webp"
   },
   {
     _id: "p43",
@@ -553,20 +511,18 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Pink Pomelo", "Cassis", "Pink Pepper"],
     heartNotes: ["Violet", "Orange Blossom", "Pastel Orchid"],
     baseNotes: ["Himalayan Cedar", "Golden Cypress", "Praline"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Fantasia.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/fantasia.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/FANTASIA .webp"
   },
   {
     _id: "p44",
-    title: "Harrera",
+    title: "Herrara",
     type: "100GM",
     longevity: "24+ Hours",
-    description: "Embrace the rich heritage of Harera, an authentic oriental attar woven with fragrant spices, crushed florals, and warm dry woods. It delivers a soothing, homely, and enduring presence that wraps you in pure comfort and prestige.",
+    description: "Embrace the rich heritage of Herrara, an authentic oriental attar woven with fragrant spices, crushed florals, and warm dry woods. It delivers a soothing, homely, and enduring presence that wraps you in pure comfort and prestige.",
     topNotes: ["Cinnamon Bark", "Citrus Sparkle"],
     heartNotes: ["Red Carnation", "Rose Petals"],
     baseNotes: ["Sandalwood", "Cedar", "Soft Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Harrera.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/harrera.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/HERRARA .webp"
   },
   {
     _id: "p45",
@@ -577,8 +533,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Pine Needles", "Basil", "Lavender"],
     heartNotes: ["Siberian Cedar", "Coriander", "Rosemary"],
     baseNotes: ["Russian Leather", "Birch Tar", "Cypress"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Russian Leather 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/russian_leather.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/RUSSIAN LEATHER .webp"
   },
   {
     _id: "p46",
@@ -589,20 +544,18 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Lychee", "Sweet Orange", "Dewy Greens"],
     heartNotes: ["Damask Rose", "Peony", "Jasmine"],
     baseNotes: ["White Musk", "Cedarwood", "Cashmeran"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aw saaf Wardi 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/aw_saaf_wardi.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/AW SAAF WARDI.webp"
   },
   {
     _id: "p47",
-    title: "Sandaliya Dahab Khusoosi",
+    title: "Sandal Dahab Khusoosi",
     type: "100GM",
     longevity: "24+ Hours",
     description: "Indulge in royal grandeur with Sandaliya Dahab Khusoosi, featuring select golden sandalwood distilled with rare saffron threads and honeyed amber. This rich, long-lasting formulation represents pure oriental majesty and unmatched quality.",
     topNotes: ["Kashmiri Saffron", "Nutmeg"],
     heartNotes: ["Royal Sandalwood", "Golden Amber"],
     baseNotes: ["Sweet Myrrh", "Aged Woods", "Precious Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sandaliya_Dahab_Khusoosi.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sandaliya_dahab_khusoosi.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/SANBDAL ALIYA DAHAB KHUSOOSI.webp"
   },
   {
     _id: "p48",
@@ -613,8 +566,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Sweet Milk Accord", "Citrus Blossom"],
     heartNotes: ["Buttery Sandalwood", "Almond Milk"],
     baseNotes: ["Vanilla Cream", "White Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Yakult_Sandal_Aliya.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/yakult_sandal_aliya.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/YAKULT SANDAL ALIYA .webp"
   },
   {
     _id: "p49",
@@ -625,8 +577,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Pure Saffron", "Cardamom Seed"],
     heartNotes: ["Mysore Sandalwood", "Rose Water"],
     baseNotes: ["Warm Amber", "Cedar", "Earthy Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sandal_Zafran.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sandal_zafran.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Sandal Zafran.webp"
   },
   {
     _id: "p50",
@@ -637,8 +588,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Cardamom"],
     heartNotes: ["Creamy Sandalwood", "Cedar Flakes"],
     baseNotes: ["Amber Crystals", "White Musk", "Dry Woods"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Munjool 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/munjool_addictive_sandal.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MUNJOOL.webp"
   },
   {
     _id: "p51",
@@ -649,8 +599,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["White Lily", "Crisp Aldehydes"],
     heartNotes: ["Velvet Musk", "Jasmine Petals"],
     baseNotes: ["Powdered Vanilla", "Soft Cedar"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Musk_Al_Jawara.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/musk_al_jawara.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Musk Al Jawara.webp"
   },
   {
     _id: "p52",
@@ -661,8 +610,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Clove Bud", "Aromatic Herbs"],
     heartNotes: ["Smoky Resins", "Rose Petals"],
     baseNotes: ["Earth Woods", "Dark Amber", "Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bent al Chad 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/bent_al_chad.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/BENT AL CHAD .webp"
   },
   {
     _id: "p53",
@@ -673,8 +621,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["White Peach", "Raspberry", "Bergamot"],
     heartNotes: ["Golden Jasmine", "Orange Blossom"],
     baseNotes: ["Cashmeran", "Praline", "Vanilla Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Miss_Dollor.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/miss_dollor.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Miss Dollor.webp"
   },
   {
     _id: "p54",
@@ -685,8 +632,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fresh Lemon", "Crisp Mint"],
     heartNotes: ["Smooth Sandalwood", "Geranium"],
     baseNotes: ["Clean Cedar", "White Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sandal Shabab 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sandal_shabab.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Sandal Shabab.webp"
   },
   {
     _id: "p55",
@@ -697,8 +643,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Petrichor Accord", "Raindrops"],
     heartNotes: ["Baked Soil", "Light Saffron"],
     baseNotes: ["Earthy Oud", "Sandalwood", "Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mud 100 gm Box & Bottle.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/Mud_perfume_oud.jpeg"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/MUD.webp"
   },
   {
     _id: "p56",
@@ -709,8 +654,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Cherry", "Bitter Almond", "Cherry Liqueur"],
     heartNotes: ["Turkish Rose", "Jasmine Sambac", "Plum"],
     baseNotes: ["Tonka Bean", "Vanilla", "Sandalwood", "Cedar"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Double_Cherry.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/double_cherry.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Double_Cherry.jpeg"
   },
   {
     _id: "p57",
@@ -721,8 +665,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Green Apple", "Red Apple"],
     heartNotes: ["Star Anise", "Cinnamon Shavings"],
     baseNotes: ["White Musk", "Cedar Shavings"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Double_Apple.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/double_apple.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Double_Apple.jpeg"
   },
   {
     _id: "p58",
@@ -733,8 +676,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Pink Bubblegum Accord", "Fruity Candies"],
     heartNotes: ["Strawberry", "Banana", "Cherry Drop"],
     baseNotes: ["Sweet Vanilla", "Spun Sugar", "Soft Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bubble_Gum.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/bubble_gum.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Bubble_Gum.jpeg"
   },
   {
     _id: "p59",
@@ -745,8 +687,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["King William Pear", "Melon"],
     heartNotes: ["White Freesia", "Rose Petals"],
     baseNotes: ["Patchouli", "Rhubarb", "Clean Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Pear.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/pear.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Pear.jpeg"
   },
   {
     _id: "p60",
@@ -757,8 +698,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Chilled Watermelon", "Pink Grapefruit"],
     heartNotes: ["Cucumber Water", "Lotus Blossom"],
     baseNotes: ["Crystalline Musk", "Light Woods"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Water_Melon.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/water_melon.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Water_Melon.jpeg"
   },
   {
     _id: "p61",
@@ -769,8 +709,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Caramelized Sugar", "Marshmallow"],
     heartNotes: ["Pistachio Cream", "Toffee"],
     baseNotes: ["Vanilla Bean", "Golden Honey", "White Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sugar_Yum.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sugar_yum.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/100ML/Sugar_Yum.jpeg"
   },
 
   // ==========================================
@@ -785,8 +724,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Saffron"],
     heartNotes: ["Rich Agarwood", "Smoky Cedar"],
     baseNotes: ["Amber", "Sandalwood", "Precious Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Kausar_Oud_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_kausar_oud_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al Kausar_Oud_6ML.jpeg"
   },
   {
     _id: "p63",
@@ -797,8 +735,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Cinnamon", "Nutmeg"],
     heartNotes: ["Caramelized Sugar", "Smooth Oud"],
     baseNotes: ["Vanilla Pod", "Amber", "Sandalwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Ameer_Oud_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/ameer_oud_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Ameer_Oud_6ML.jpeg"
   },
   {
     _id: "p64",
@@ -809,8 +746,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Oregano", "Pimento Berry", "Bergamot"],
     heartNotes: ["Incense", "Opoponax", "Amber"],
     baseNotes: ["Leather", "Agarwood Smoke", "Patchouli"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/6ml/Ameage 6ml Bottle & Box.png",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/6ml/Ameage 6ml Bottle & Box.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/6ml/Ameage 6ml Bottle & Box.png"
   },
   {
     _id: "p65",
@@ -821,8 +757,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Citrus Zest", "Green Leaves"],
     heartNotes: ["Ginger", "Gardenia Petals"],
     baseNotes: ["Clean Musk", "Sandalwood", "Vetiver"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aqua_121_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/aqua_121_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aqua_121_6ML.jpeg"
   },
   {
     _id: "p66",
@@ -833,8 +768,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Saffron", "Bitter Almond"],
     heartNotes: ["Jasmine Sambac", "Spun Sugar"],
     baseNotes: ["Ambergris", "Cedarwood", "Cashmeran"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bacaar_Rouge_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/bacaar_rouge_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bacaar_Rouge_6ML.jpeg"
   },
   {
     _id: "p67",
@@ -845,8 +779,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Crimson Rose", "Mandarin"],
     heartNotes: ["Aged Agarwood", "French Labdanum"],
     baseNotes: ["Dark Patchouli", "Musk", "Leather"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black Oud_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/black_oud_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black Oud_6ML.jpeg"
   },
   {
     _id: "p68",
@@ -857,8 +790,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Bergamot", "Grapefruit", "Spices"],
     heartNotes: ["Geranium", "Magnolia", "Violet Leaves"],
     baseNotes: ["Vetiver", "Cedarwood", "Patchouli"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black_Touch_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/black_touch_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Black_Touch_6ML.jpeg"
   },
   {
     _id: "p69",
@@ -869,8 +801,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Clementine", "Almond Blossom"],
     heartNotes: ["Amaryllis", "Jasmine", "Peony"],
     baseNotes: ["Bourbon Vanilla", "White Musk", "Golden Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Cinema_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/cinema_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Cinema_6ML.jpeg"
   },
   {
     _id: "p70",
@@ -881,8 +812,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fruity Accord", "Bergamot"],
     heartNotes: ["White Lily", "Freesia", "Orchid"],
     baseNotes: ["Clean Sandalwood", "White Musk", "Soft Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/E_Collection_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/e_collection_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/E_Collection_6ML.jpeg"
   },
   {
     _id: "p71",
@@ -893,8 +823,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Cardamom", "Golden Citrus"],
     heartNotes: ["Honeyed Amber", "Cinnamon", "Dry Woods"],
     baseNotes: ["Oud Wood", "Musk", "Warm Benzoin"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Emarte_Gold_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/emarte_gold_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Emarte_Gold_6ML.jpeg"
   },
   {
     _id: "p72",
@@ -905,8 +834,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Apple", "Bergamot", "Lemon", "Cinnamon"],
     heartNotes: ["Watery Notes", "Plum", "Orange Blossom"],
     baseNotes: ["Ambergris", "Musk", "Driftwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Hawas_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/hawas_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Hawas_6ML.jpeg"
   },
   {
     _id: "p73",
@@ -917,8 +845,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Pepper", "Bergamot Zest"],
     heartNotes: ["Supple Leather", "Nutmeg", "Cacao"],
     baseNotes: ["Smoky Vetiver", "Agarwood", "Dark Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/King_Black_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/king_black_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/King_Black_6ML.jpeg"
   },
   {
     _id: "p74",
@@ -929,8 +856,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Mint Leaves", "Green Apple", "Lemon"],
     heartNotes: ["Tonka Bean", "Geranium", "Ambroxan"],
     baseNotes: ["Madagascar Vanilla", "Vetiver", "Cedarwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Marbit_Men_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/marbit_men_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Marbit_Men_6ML.jpeg"
   },
   {
     _id: "p75",
@@ -941,8 +867,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Fresh Herbs", "Bright Citrus"],
     heartNotes: ["Pure White Musk", "Geranium"],
     baseNotes: ["Subtle Oud", "Sandalwood", "Ambergris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Misk_Rijali_Oud_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/misk_rijali_oud_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Misk_Rijali_Oud_6ML.jpeg"
   },
   {
     _id: "p76",
@@ -953,8 +878,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Rose Petals", "Warm Saffron"],
     heartNotes: ["Precious Sandalwood", "Cardamom"],
     baseNotes: ["Golden Amber", "Traditional Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mukhallat_Badar_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/mukhallat_badar_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Mukhallat_Badar_6ML.jpeg"
   },
   {
     _id: "p77",
@@ -965,8 +889,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Frankincense", "Taif Rose"],
     heartNotes: ["Aged Oud", "Warm Spices"],
     baseNotes: ["Sweet Amber", "White Musk", "Cedarwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Oud_Al_Haram_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/oud_al_haram_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Oud_Al_Haram_6ML.jpeg"
   },
   {
     _id: "p78",
@@ -977,8 +900,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Tea Leaves", "Cardamom"],
     heartNotes: ["Precious Oud", "Clove", "Dried Fruit"],
     baseNotes: ["Leather", "Smoky Cedar", "Warm Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Shai_Oud_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/shai_oud_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Shai_Oud_6ML.jpeg"
   },
   {
     _id: "p79",
@@ -989,8 +911,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Wild Berries", "Spicy Pepper"],
     heartNotes: ["Dark Rose", "Night Jasmine"],
     baseNotes: ["Sensual Amber", "Vanilla", "Black Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/SX_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sx_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/SX_6ML.jpeg"
   },
   {
     _id: "p80",
@@ -1001,8 +922,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Calabrian Lemon", "Sage", "Tagetes"],
     heartNotes: ["Praline", "Black Cardamom", "Cinnamon"],
     baseNotes: ["Black Amber", "Patchouli", "Rosewood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/XXS_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/xxs_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/XXS_6ML.jpeg"
   },
   {
     _id: "p81",
@@ -1013,8 +933,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Mandarin", "Lemongrass", "Pineapple"],
     heartNotes: ["Jasmine", "Lily of the Valley", "Rose"],
     baseNotes: ["Cedarwood", "Vanilla", "White Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Dirgham_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/dirgham_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Dirgham_6ML.jpeg"
   },
   {
     _id: "p82",
@@ -1025,8 +944,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Black Pepper", "Smoky Bergamot"],
     heartNotes: ["Incense", "Labdanum", "Nutmeg"],
     baseNotes: ["Black Amber", "Oud Wood", "Leather"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aswad_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/aswad_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Aswad_6ML.jpeg"
   },
   {
     _id: "p83",
@@ -1037,8 +955,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Golden Pear", "Peach", "Bergamot"],
     heartNotes: ["Jasmine Blossoms", "Orange Flower"],
     baseNotes: ["Vanilla Pod", "Amber", "Cashmere Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Jawahara_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/jawahara_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Jawahara_6ML.jpeg"
   },
   {
     _id: "p84",
@@ -1049,8 +966,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Juicy Pineapple", "Bergamot", "Apple"],
     heartNotes: ["Birch", "Patchouli", "Moroccan Jasmine"],
     baseNotes: ["Ambroxan", "Musk", "Oakmoss"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Now_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/now_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Now_6ML.jpeg"
   },
   {
     _id: "p85",
@@ -1061,8 +977,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Red Pepper", "Grapefruit", "Pink Pepper"],
     heartNotes: ["Lavender", "Saffron", "Elemi Resin"],
     baseNotes: ["Smoky Vetiver", "Tobacco Leaves", "Leather"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Super_Rebel_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/super_rebel_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Super_Rebel_6ML.jpeg"
   },
   {
     _id: "p86",
@@ -1073,8 +988,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Mandarin", "Pink Pepper", "Clary Sage"],
     heartNotes: ["Peony", "Jasmine Petals", "Lily"],
     baseNotes: ["Sandalwood", "Vanilla Musk", "Iris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Inspiration_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/inspiration_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Inspiration_6ML.jpeg"
   },
   {
     _id: "p87",
@@ -1085,8 +999,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Dark Cocoa Powder", "Sweet Orange"],
     heartNotes: ["Milk Chocolate", "Roasted Hazelnut"],
     baseNotes: ["Vanilla Cream", "Caramelized Sugar", "Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Chocolate_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/chocolate_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Chocolate_6ML.jpeg"
   },
   {
     _id: "p88",
@@ -1097,8 +1010,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Green Florals", "Sweet Mandarin"],
     heartNotes: ["Rose Petals", "Marigold", "Jasmine"],
     baseNotes: ["White Musk", "Soft Sandalwood", "Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Zahra_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/zahra_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Zahra_6ML.jpeg"
   },
   {
     _id: "p89",
@@ -1109,8 +1021,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Herbal Notes", "Crisp Thyme", "Bergamot"],
     heartNotes: ["Spicy Clove", "Patchouli Leaves"],
     baseNotes: ["Cedarwood", "Oakmoss", "Classic Musk"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Fares_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/al_fares_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Al_Fares_6ML.jpeg"
   },
   {
     _id: "p90",
@@ -1121,8 +1032,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Water Accord", "Fresh Mint"],
     heartNotes: ["Rose Water", "Lotus Petals"],
     baseNotes: ["Pure White Musk", "Clear Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Zamzam_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/zamzam_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Zamzam_6ML.jpeg"
   },
   {
     _id: "p91",
@@ -1133,8 +1043,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Crushed Pepper", "Grapefruit", "Lemon"],
     heartNotes: ["Cardamom", "Geranium Leaves"],
     baseNotes: ["Smoky Cedar", "Vetiver", "Ambergris"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Attack_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/attack_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Attack_6ML.jpeg"
   },
   {
     _id: "p92",
@@ -1145,8 +1054,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Green Citrus", "Fresh Apple"],
     heartNotes: ["Taif Rose", "Jasmine Blossoms"],
     baseNotes: ["Clean White Musk", "Warm Amber"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sabaya_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/sabaya_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Sabaya_6ML.jpeg"
   },
   {
     _id: "p93",
@@ -1157,8 +1065,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Sweet Orange", "Red Apple"],
     heartNotes: ["Honeyed Jasmine", "White Lily"],
     baseNotes: ["Golden Amber", "Musk", "Sandalwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bushra_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/bushra_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Bushra_6ML.jpeg"
   },
   {
     _id: "p94",
@@ -1169,8 +1076,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Sage", "Bergamot", "Artemisia"],
     heartNotes: ["Lavender", "Galbanum", "Cedar Leaves"],
     baseNotes: ["Rich Oakmoss", "Leather", "Patchouli"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Dakar_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/dakar_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Dakar_6ML.jpeg"
   },
   {
     _id: "p95",
@@ -1181,8 +1087,7 @@ const RAW_STATIC_PRODUCTS = [
     topNotes: ["Strawberry", "Orange Blossom", "Plum"],
     heartNotes: ["Rose Petals", "Ylang-Ylang", "Ginger Lily"],
     baseNotes: ["Golden Vanilla", "Honeyed Amber", "Sandalwood"],
-    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Noora_6ML.jpeg",
-    designerBgImageUrl: "./src/assets/Images/Edited/bottlebox/noora_6ml.png"
+    whiteBgImageUrl: "./src/assets/Images/whitebg/bottlebox/Noora_6ML.jpeg"
   }
 ];
 
@@ -1192,9 +1097,5 @@ export const STATIC_PRODUCTS = RAW_STATIC_PRODUCTS.map((product) => ({
 
   whiteBgImageUrl: resolveProductImage(
     product.whiteBgImageUrl
-  ),
-
-  designerBgImageUrl: resolveProductImage(
-    product.designerBgImageUrl
   ),
 }));

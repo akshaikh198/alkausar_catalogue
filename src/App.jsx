@@ -31,25 +31,25 @@ function SEOManager() {
   const location = useLocation();
   const path = location.pathname;
 
-  let pageTitle = 'Al Kausar | Luxury Artisanal Perfume Atelier';
+  let pageTitle = 'Al Kausar | Attars And Perfumes';
 
   let pageDesc =
     'Artisanal non-alcoholic pure oils, luxury 100gm sprays, and high-end hand-rolled Agarbatti incense formulated perfectly in small batches.';
 
   if (path === '/about') {
-    pageTitle = 'Our Heritage | Al Kausar';
+    pageTitle = 'About | Al Kausar';
 
     pageDesc =
       'Discover our traditional perfumery heritage, carefully selected ingredients and commitment to exceptional fragrance craftsmanship.';
 
   } else if (path === '/contact') {
-    pageTitle = 'Boutique Concierge & Contact | Al Kausar';
+    pageTitle = 'Contact | Al Kausar';
 
     pageDesc =
       'Contact Al Kausar Perfumes for product enquiries, fragrance recommendations and customer assistance.';
 
   } else if (path === '/gallery') {
-    pageTitle = 'The Scent Vault Catalog | Al Kausar';
+    pageTitle = 'gallery| Al Kausar';
 
     pageDesc =
       'Explore the Al Kausar fragrance gallery featuring luxury sprays, concentrated oils and premium incense.';
