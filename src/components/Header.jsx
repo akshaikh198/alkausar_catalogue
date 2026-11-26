@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import banner1 from '../assets/Images/Banner/al kausar banner .webp';
-import banner2 from '../assets/Images/Banner/al kausar banner 1.webp';
-import banner3 from '../assets/Images/Banner/w2.png';
+import banner2 from '../assets/Images/Banner/al kausar banner 2.webp';
+import banner3 from '../assets/Images/Banner/mud banner .webp';
 
 const slides = [
   {
